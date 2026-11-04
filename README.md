@@ -1,4 +1,4 @@
-<div align="left">
+<img width="1347" height="726" alt="image" src="https://github.com/user-attachments/assets/f6f7fb1c-acb2-4404-a9fd-78d6f1ce6967" /><div align="left">
 
   <h1>💳 ReCatch (리캐치)</h1>
   <h3><font color="#2B6CB0">"놓친 카드 혜택, 더 유리한 조건으로 다시 캐치하다!"</font></h3>
@@ -7,7 +7,7 @@
   <br>
 
   <a href="https://seungbeenyoo.github.io/Recatch-APP/">
-    <img src="https://api.microlink.io/?url=https%3A%2F%2Fseungbeenyoo.github.io%2FRecatch-APP%2F&screenshot=true&embed=screenshot.url&viewport.width=1280&viewport.height=800&waitForTimeout=2500&meta=false" alt="Recatch Interactive Demo Page" width="100%">
+        <img src="images/demo.png" alt="Recatch Interactive Demo Page" width="100%">
   </a>
   <p>▲ <b>위 이미지를 클릭하면 실제 배포된 <u>[리캐치 웹사이트 데모]</u>로 이동합니다.</b></p>
 
