@@ -5,14 +5,13 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ReCatch"><meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#18171C">
-<link rel="apple-touch-icon" href="Logo.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" type="image/png" href="apple-touch-icon.png">
 <title>ReCatch</title>
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;height:100dvh;overflow:hidden;overscroll-behavior:none;background:#18171C;-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;-webkit-touch-callout:none}
-body{padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
 #probe{position:fixed;visibility:hidden;pointer-events:none;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
-.box{position:relative;width:100%;height:100%;max-width:480px;margin:0 auto;overflow:hidden;background:#FFFFFF}
+.box{position:relative;width:100%;height:100%;max-width:480px;background:#FFFFFF;margin:0 auto;overflow:hidden;background:#FFFFFF}
 .box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#FFFFFF}
 #fApp2{opacity:0;visibility:hidden;transform:scale(.96);transition:opacity .28s ease,transform .32s cubic-bezier(.2,.8,.2,1),visibility 0s .32s}
 #fApp2.on{opacity:1;visibility:visible;transform:none;transition:opacity .28s ease,transform .32s cubic-bezier(.2,.8,.2,1)}
@@ -595,17 +594,22 @@ seed().then(()=&gt;reset(&#x27;splash&#x27;));
 })();
 &lt;/script&gt;
 &lt;style id=&quot;iphone-fit&quot;&gt;
-html,body{height:100%!important}
-.phone{position:absolute!important;inset:0!important;left:0!important;top:0!important;transform:none!important;width:100%!important;height:100%!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding-bottom:var(--sab,0px);background:var(--card)}
+html,body{height:100%!important;background:var(--card)}
+.phone{position:absolute!important;inset:0!important;left:0!important;top:0!important;transform:none!important;width:100%!important;height:100%!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;background:var(--card)}
 .statusbar,.navbar{display:none!important}
-.hun{top:calc(8px + var(--sat,0px))!important}
-.foot{padding-bottom:16px}
-.bsheet{padding-bottom:calc(20px + var(--sab,0px))!important}
-.login .sheet{padding-bottom:calc(8px + var(--sab,0px))}
-.login .sheet{justify-content:flex-start!important}
+section.screen{padding-top:max(env(safe-area-inset-top,0px),var(--sat,0px))}
+section.screen[data-screen=login],section.screen[data-screen=splash],section.screen[data-screen=launcher]{padding-top:0}
+.foot{padding-bottom:calc(16px + max(env(safe-area-inset-bottom,0px),var(--sab,0px)))!important}
+.bsheet{padding-bottom:calc(20px + max(env(safe-area-inset-bottom,0px),var(--sab,0px)))!important}
+.hun{top:calc(8px + max(env(safe-area-inset-top,0px),var(--sat,0px)))!important}
+.toast{bottom:calc(24px + max(env(safe-area-inset-bottom,0px),var(--sab,0px)))!important}
+.login .sheet{justify-content:flex-start!important;padding-bottom:calc(8px + max(env(safe-area-inset-bottom,0px),var(--sab,0px)))!important}
 .login .sheet&gt;:first-child{margin-top:auto}.login .sheet&gt;:last-child{margin-bottom:auto}
 @media (max-height:760px){.login{grid-template-rows:auto minmax(0,1fr)!important}.login .hero{padding:22px 24px 40px!important;gap:12px!important}.login .hero .wm{font-size:36px}.login .appicon{--ic:56px}.login .tag{font-size:21px}.how{gap:8px}.how li{font-size:14px}}
+.login .hero{padding-top:calc(16px + max(env(safe-area-inset-top,0px),var(--sat,0px)))!important}
+.hun:not(.on){transform:translateY(calc(-100% - 40px - max(env(safe-area-inset-top,0px),var(--sat,0px))))!important}
 input,select{font-size:16px!important}
+body::after{content:&quot;&quot;;position:fixed;left:0;right:0;top:0;height:calc(max(env(safe-area-inset-top,0px),var(--sat,0px)) + 10px);background:linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,0));z-index:9999;pointer-events:none}
 &lt;/style&gt;&lt;/body&gt;&lt;/html&gt;
 "></iframe>
 <iframe id="fApp2" title="ReCatch 앱" tabindex="-1" aria-hidden="true" srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=utf8&gt;&lt;meta name=viewport content=&quot;width=device-width,initial-scale=1,viewport-fit=cover&quot;&gt;&lt;style&gt;:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
@@ -1840,15 +1844,25 @@ go(TABS.includes(location.hash.slice(1))?location.hash.slice(1):&#x27;home&#x27;
 &lt;/script&gt;
 
 &lt;style id=&quot;iphone-fit&quot;&gt;
+:root,html{padding:0!important}
 html.framed body,html.embedded body,body{background:var(--card)!important}
 html.framed .app,.app{position:relative!important;left:auto!important;top:auto!important;transform:none!important;width:100%!important;max-width:none!important;height:100%!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important}
 .statusbar,.navbar{display:none!important}
-.tabbar{padding-bottom:calc(8px + var(--sab,0px))!important}
-.sheet{padding-bottom:calc(22px + var(--sab,0px))!important}
-.panel-f{padding-bottom:var(--sab,0px)}
-.hun{top:calc(8px + var(--sat,0px))!important}
-.toast{bottom:calc(90px + var(--sab,0px))!important}
+.hero{padding-top:calc(14px + max(env(safe-area-inset-top,0px),var(--sat,0px)))!important}
+.handle{top:max(env(safe-area-inset-top,0px),var(--sat,0px))!important}
+.handle::before{content:&quot;&quot;;position:absolute;left:0;right:0;bottom:100%;height:max(env(safe-area-inset-top,0px),var(--sat,0px));background:var(--card);opacity:clamp(0,calc((var(--p) - .97) * 100),1)}
+.tabbar{padding-bottom:calc(8px + max(env(safe-area-inset-bottom,0px),var(--sab,0px)))!important}
+.sheet{padding-bottom:calc(22px + max(env(safe-area-inset-bottom,0px),var(--sab,0px)))!important}
+.panel-f{padding-bottom:calc(20px + max(env(safe-area-inset-bottom,0px),var(--sab,0px)))!important}
+.lock{padding-top:calc(56px + max(env(safe-area-inset-top,0px),var(--sat,0px)))!important}
+.lock .x{top:calc(14px + max(env(safe-area-inset-top,0px),var(--sat,0px)))!important}
+.pay{padding-top:calc(16px + max(env(safe-area-inset-top,0px),var(--sat,0px)))!important}
+.done-p{padding-top:calc(clamp(24px,8vh,72px) + max(env(safe-area-inset-top,0px),var(--sat,0px)))!important}
+.hun{top:calc(8px + max(env(safe-area-inset-top,0px),var(--sat,0px)))!important}
+.toast{bottom:calc(90px + max(env(safe-area-inset-bottom,0px),var(--sab,0px)))!important}
+.hun:not(.on){transform:translateY(calc(-100% - 40px - max(env(safe-area-inset-top,0px),var(--sat,0px))))!important}
 input,select{font-size:16px!important}
+body::after{content:&quot;&quot;;position:fixed;left:0;right:0;top:0;height:calc(max(env(safe-area-inset-top,0px),var(--sat,0px)) + 10px);background:linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,0));z-index:9999;pointer-events:none}
 &lt;/style&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
 </main>
 <script>
@@ -1857,7 +1871,7 @@ input,select{font-size:16px!important}
 const fAuth=document.getElementById('fAuth'),fApp2=document.getElementById('fApp2'),probe=document.getElementById('probe');
 /* 아이폰 노치·홈 인디케이터 영역을 화면 안쪽에 전달 */
 function insets(){const cs=getComputedStyle(probe),top=cs.paddingTop,bot=cs.paddingBottom;
-  [fAuth,fApp2].forEach(f=>{try{const r=f.contentDocument&&f.contentDocument.documentElement;if(r){r.style.setProperty('--sab',bot);r.style.setProperty('--sat','0px')}}catch(_){}})}
+  [fAuth,fApp2].forEach(f=>{try{const r=f.contentDocument&&f.contentDocument.documentElement;if(r){r.style.setProperty('--sab',bot);r.style.setProperty('--sat',top)}}catch(_){}})}
 addEventListener('resize',insets);addEventListener('orientationchange',()=>setTimeout(insets,300));
 let last=null;
 const showInApp=on=>{fApp2.classList.toggle('on',on);fApp2.setAttribute('aria-hidden',String(!on));fApp2.tabIndex=on?0:-1;fAuth.tabIndex=on?-1:0;if(on)setTimeout(()=>fApp2.focus(),200)};
