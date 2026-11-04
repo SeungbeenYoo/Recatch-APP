@@ -1,5 +1,3 @@
-<img width="1347" height="726" alt="image" src="https://github.com/user-attachments/assets/f6f7fb1c-acb2-4404-a9fd-78d6f1ce6967" /><div align="left">
-
   <h1>💳 ReCatch (리캐치)</h1>
   <h3><font color="#2B6CB0">"놓친 카드 혜택, 더 유리한 조건으로 다시 캐치하다!"</font></h3>
   <p>결제 내역 분석 기반 맞춤형 재결제 할인 알림 및 혜택 비교 서비스</p>
