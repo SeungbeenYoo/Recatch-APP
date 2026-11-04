@@ -1391,7 +1391,7 @@ const ICON_SUN=&#x27;&lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=
 function applyTheme(t,animate){const root=document.documentElement;if(animate){root.classList.add(&#x27;theming&#x27;);clearTimeout(applyTheme._t);applyTheme._t=setTimeout(()=&gt;root.classList.remove(&#x27;theming&#x27;),450)}
   root.dataset.theme=t;$$(&#x27;[data-theme-toggle]&#x27;).forEach(b=&gt;{const dark=t===&#x27;dark&#x27;;b.innerHTML=dark?ICON_SUN:ICON_MOON;b.setAttribute(&#x27;aria-pressed&#x27;,String(dark));b.setAttribute(&#x27;aria-label&#x27;,dark?&#x27;라이트 모드로 바꾸기&#x27;:&#x27;다크 모드 켜기&#x27;)});
   typeof sbUpdate===&#x27;function&#x27;&amp;&amp;sbUpdate();if(t===&#x27;dark&#x27;&amp;&amp;animate&amp;&amp;typeof cardIntro===&#x27;function&#x27;)cardIntro()}
-let theme=(()=&gt;{try{const v=localStorage.getItem(THEME_KEY);if(v===&#x27;dark&#x27;||v===&#x27;light&#x27;)return v}catch(_){}return matchMedia(&#x27;(prefers-color-scheme: dark)&#x27;).matches?&#x27;dark&#x27;:&#x27;light&#x27;})();
+let theme=(()=&gt;{try{const v=localStorage.getItem(THEME_KEY);if(v===&#x27;dark&#x27;||v===&#x27;light&#x27;)return v}catch(_){}return &#x27;light&#x27;})();
 const maskName=n=&gt;n.length&lt;2?n:n[0]+&#x27;*&#x27;+n.slice(2);
 function persist(){try{localStorage.setItem(activeKey,JSON.stringify({v:2,demo:demoData,cards:CARDS.filter(c=&gt;c.user).map(c=&gt;({co:c.co,name:c.name,last:c.last})),mems:MEMS.filter(m=&gt;m.user).map(m=&gt;({name:m.name,code:m.code})),tx:TX.filter(x=&gt;x.id&gt;=100),nextId,scenIdx,prefs,conds,rem:[...rem],npCat,fee:FEE,name:userName}));saveFailed=false}catch(_){saveFailed=true}}
 const saveNote=()=&gt;saveFailed?&#x27; 이 브라우저에 저장하지 못해 새로고침하면 사라져요.&#x27;:&#x27;&#x27;;
@@ -1811,7 +1811,7 @@ $(&#x27;#navbar&#x27;).addEventListener(&#x27;click&#x27;,e=&gt;{const b=e.targe
 function resetView(){closeHandoff();if(flow.classList.contains(&#x27;on&#x27;))endFlow();closeSheet();closeWelcome();cur=0;filt=&#x27;all&#x27;;open.clear();const q=$(&#x27;#histQ&#x27;);if(q)q.value=&#x27;&#x27;;go(&#x27;home&#x27;);$(&#x27;#v-home&#x27;).scrollTop=0;syncSlide($(&#x27;#v-home&#x27;));cardIntro()}
 function switchUser(m){persist();const uid=typeof m.uid===&#x27;string&#x27;&amp;&amp;/^[a-z0-9]{4,16}$/.test(m.uid)?m.uid:null;
   activeKey=uid?KEY+&#x27;:u:&#x27;+uid:KEY;loggedIn=true;loadState(m.reset?null:readSaved(activeKey),{demo:!!m.demo,name:m.name,profile:m.profile});persist();resetView();
-  if(m.first)welcome();else toast(`${userName} 님, 반가워요`)}
+  if(m.first){theme=&#x27;light&#x27;;try{localStorage.setItem(THEME_KEY,&#x27;light&#x27;)}catch(_){}applyTheme(&#x27;light&#x27;,false);welcome()}else toast(`${userName} 님, 반가워요`)}
 function switchToGuest(){persist();loggedIn=false;activeKey=KEY;loadState(readSaved(KEY),{demo:true,name:&#x27;김리캐&#x27;});resetView()}
 function setDemo(on){const sv=JSON.parse(JSON.stringify({demo:on,cards:CARDS.filter(c=&gt;c.user).map(c=&gt;({co:c.co,name:c.name,last:c.last})),mems:MEMS.filter(m=&gt;m.user).map(m=&gt;({name:m.name,code:m.code})),tx:on?TX.filter(x=&gt;x.id&gt;=100):[],scenIdx,prefs,conds,rem:[...rem],npCat,fee:FEE,name:userName}));
   loadState(sv,{name:userName});persist();cur=0;open.clear();RENDER[tab]();if(tab===&#x27;home&#x27;){$(&#x27;#v-home&#x27;).scrollTop=0;syncSlide($(&#x27;#v-home&#x27;))}
