@@ -11,7 +11,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;height:100dvh;overflow:hidden;overscroll-behavior:none;background:#18171C;-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;-webkit-touch-callout:none}
 #probe{position:fixed;visibility:hidden;pointer-events:none;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
-.box{position:relative;width:100%;height:100%;max-width:480px;background:#FFFFFF;margin:0 auto;overflow:hidden;background:#FFFFFF}
+.box{position:fixed;top:0;left:0;right:0;width:100%;height:100%;height:100dvh;max-width:480px;background:#FFFFFF;margin:0 auto;overflow:hidden;background:#FFFFFF}
 .box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#FFFFFF}
 #fApp2{opacity:0;visibility:hidden;transform:scale(.96);transition:opacity .28s ease,transform .32s cubic-bezier(.2,.8,.2,1),visibility 0s .32s}
 #fApp2.on{opacity:1;visibility:visible;transform:none;transition:opacity .28s ease,transform .32s cubic-bezier(.2,.8,.2,1)}
@@ -1872,7 +1872,7 @@ const fAuth=document.getElementById('fAuth'),fApp2=document.getElementById('fApp
 /* 아이폰 노치·홈 인디케이터 영역을 화면 안쪽에 전달 */
 function insets(){const cs=getComputedStyle(probe),top=cs.paddingTop,bot=cs.paddingBottom;
   [fAuth,fApp2].forEach(f=>{try{const r=f.contentDocument&&f.contentDocument.documentElement;if(r){r.style.setProperty('--sab',bot);r.style.setProperty('--sat',top)}}catch(_){}})}
-addEventListener('resize',insets);addEventListener('orientationchange',()=>setTimeout(insets,300));
+const box=document.querySelector('.box');function fit(){const st=navigator.standalone===true||matchMedia('(display-mode: standalone)').matches;if(!st){box.style.height='';return}const land=innerWidth>innerHeight,full=land?Math.min(screen.width,screen.height):Math.max(screen.width,screen.height);box.style.height=Math.max(full,innerHeight)+'px'}fit();addEventListener('resize',()=>{fit();insets()});addEventListener('orientationchange',()=>setTimeout(()=>{fit();insets()},300));addEventListener('pageshow',fit);addEventListener('orientationchange',()=>setTimeout(insets,300));
 let last=null;
 const showInApp=on=>{fApp2.classList.toggle('on',on);fApp2.setAttribute('aria-hidden',String(!on));fApp2.tabIndex=on?0:-1;fAuth.tabIndex=on?-1:0;if(on)setTimeout(()=>fApp2.focus(),200)};
 fAuth.addEventListener('load',insets);
