@@ -1145,9 +1145,9 @@ html.theming,html.theming *{transition:background-color .35s ease,color .35s eas
               &lt;button class=&quot;ibtn&quot; data-open=&quot;settings&quot; aria-label=&quot;설정&quot;&gt;&lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M4 7h10M18 7h2M4 17h4M12 17h8&quot;/&gt;&lt;circle cx=&quot;16&quot; cy=&quot;7&quot; r=&quot;2&quot;/&gt;&lt;circle cx=&quot;10&quot; cy=&quot;17&quot; r=&quot;2&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;
             &lt;/div&gt;
             &lt;span class=&quot;hi&quot; id=&quot;hiName&quot;&gt;안녕하세요, 김리캐 님&lt;/span&gt;
-            &lt;button class=&quot;paycard&quot; data-open=&quot;stmt&quot; aria-label=&quot;10월 정산 카드, 누르면 정산 리포트&quot;&gt;
-              &lt;span class=&quot;pc-top&quot;&gt;&lt;span class=&quot;logo&quot;&gt;ReCatch&lt;span class=&quot;dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pc-tag&quot;&gt;10월 정산 &lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M8.5 7.5a6 6 0 0 1 0 9M12 5a9.5 9.5 0 0 1 0 14M15.5 2.5a13 13 0 0 1 0 19&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
-              &lt;span class=&quot;pc-mid&quot;&gt;&lt;small&gt;10월에 되찾은 돈&lt;/small&gt;&lt;span class=&quot;pc-amt&quot;&gt;&lt;span id=&quot;hTotal&quot;&gt;0&lt;/span&gt;&lt;small&gt;원&lt;/small&gt;&lt;/span&gt;&lt;span class=&quot;pc-sub&quot; id=&quot;hSub&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+            &lt;button class=&quot;paycard&quot; data-open=&quot;stmt&quot; aria-label=&quot;이번 달 정산 카드, 누르면 정산 리포트&quot;&gt;
+              &lt;span class=&quot;pc-top&quot;&gt;&lt;span class=&quot;logo&quot;&gt;ReCatch&lt;span class=&quot;dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pc-tag&quot;&gt;&lt;span&gt;&lt;span data-mon&gt;10&lt;/span&gt;월 정산&lt;/span&gt; &lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M8.5 7.5a6 6 0 0 1 0 9M12 5a9.5 9.5 0 0 1 0 14M15.5 2.5a13 13 0 0 1 0 19&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
+              &lt;span class=&quot;pc-mid&quot;&gt;&lt;small&gt;&lt;span data-mon&gt;10&lt;/span&gt;월에 되찾은 돈&lt;/small&gt;&lt;span class=&quot;pc-amt&quot;&gt;&lt;span id=&quot;hTotal&quot;&gt;0&lt;/span&gt;&lt;small&gt;원&lt;/small&gt;&lt;/span&gt;&lt;span class=&quot;pc-sub&quot; id=&quot;hSub&quot;&gt;&lt;/span&gt;&lt;/span&gt;
               &lt;span class=&quot;pc-bot&quot;&gt;
                 &lt;span&gt;&lt;small id=&quot;lFeeLbl&quot;&gt;수수료 20%&lt;/small&gt;&lt;b id=&quot;lFee&quot;&gt;0&lt;/b&gt;&lt;/span&gt;
                 &lt;span class=&quot;net&quot;&gt;&lt;small&gt;내 순절약&lt;/small&gt;&lt;b id=&quot;lNet&quot;&gt;0&lt;/b&gt;&lt;/span&gt;
@@ -1204,7 +1204,7 @@ html.theming,html.theming *{transition:background-color .35s ease,color .35s eas
         &lt;header class=&quot;hero&quot;&gt;
           &lt;div class=&quot;hero-in&quot;&gt;
             &lt;div class=&quot;top&quot;&gt;&lt;span class=&quot;logo&quot; aria-label=&quot;ReCatch&quot;&gt;ReCatch&lt;span class=&quot;dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;sp&quot;&gt;&lt;/span&gt;&lt;/div&gt;
-            &lt;div style=&quot;display:flex;flex-direction:column;gap:2px&quot;&gt;&lt;h1 class=&quot;hero-title kr&quot;&gt;소비 분석&lt;/h1&gt;&lt;span class=&quot;hi&quot;&gt;10월 1일부터 오늘까지&lt;/span&gt;&lt;/div&gt;
+            &lt;div style=&quot;display:flex;flex-direction:column;gap:2px&quot;&gt;&lt;h1 class=&quot;hero-title kr&quot;&gt;소비 분석&lt;/h1&gt;&lt;span class=&quot;hi&quot;&gt;&lt;span data-mon&gt;10&lt;/span&gt;월 1일부터 오늘까지&lt;/span&gt;&lt;/div&gt;
             &lt;div class=&quot;kpis&quot;&gt;
               &lt;button class=&quot;kpi&quot; data-insight=&quot;success&quot;&gt;&lt;small&gt;재결제 성공률&lt;/small&gt;&lt;b id=&quot;sRate&quot;&gt;0%&lt;/b&gt;&lt;span id=&quot;sRateSub&quot;&gt;&lt;/span&gt;&lt;span class=&quot;bar&quot; aria-hidden=&quot;true&quot;&gt;&lt;i id=&quot;sRateBar&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
               &lt;button class=&quot;kpi&quot; data-insight=&quot;missedAmount&quot;&gt;&lt;small&gt;놓친 혜택&lt;/small&gt;&lt;b id=&quot;sMiss&quot; style=&quot;color:var(--miss)&quot;&gt;0&lt;/b&gt;&lt;span id=&quot;sMissSub&quot;&gt;&lt;/span&gt;&lt;/button&gt;
@@ -1315,20 +1315,28 @@ const mark=store=&gt;{const lk=Object.keys(LOGO).find(k=&gt;store.startsWith(k)&
   const k=Object.keys(PIC).find(k=&gt;store.startsWith(k));
   if(k){const [bg,art]=PIC[k];return `&lt;span class=&quot;mk pic&quot; style=&quot;--m:${bg}&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg viewBox=&quot;0 0 48 48&quot; width=&quot;34&quot; height=&quot;34&quot;&gt;${art}&lt;/svg&gt;&lt;/span&gt;`}
   const [t,c]=MARK[Object.keys(MARK).find(m=&gt;store.startsWith(m))]||[store[0]||&#x27;?&#x27;,&#x27;#6B5C4B&#x27;];return `&lt;span class=&quot;mk&quot; style=&quot;--m:${c}&quot; aria-hidden=&quot;true&quot;&gt;${esc(t)}&lt;/span&gt;`};
+/* 달 표기와 월별 집계는 오늘 날짜 기준. 내역 날짜(d)는 &#x27;MM.DD&#x27;라 연도는 구분하지 않아요 */
+const NOW_M=new Date().getMonth()+1,PREV_M=(NOW_M+10)%12+1,MM2=n=&gt;String(n).padStart(2,&#x27;0&#x27;);
+const demoDate=back=&gt;{const t=new Date();return MM2(NOW_M)+&#x27;.&#x27;+MM2(Math.max(1,t.getDate()-back))};
+const monthTX=()=&gt;TX.filter(x=&gt;x.d.startsWith(MM2(NOW_M)+&#x27;.&#x27;));
+const prevV=p=&gt;p.v+TX.filter(x=&gt;x.status===&#x27;done&#x27;&amp;&amp;x.d.startsWith(p.mm+&#x27;.&#x27;)).reduce((a,x)=&gt;a+x.save,0);
 const BASE_TX=[
- {id:1,store:&#x27;올리브영 동성로점&#x27;,cat:&#x27;beauty&#x27;,amount:456000,save:45600,src:&#x27;CJ ONE 10% 적립&#x27;,srcKey:&#x27;cj&#x27;,status:&#x27;pending&#x27;,d:&#x27;10.07&#x27;,t:&#x27;12:30&#x27;,note:&#x27;카드사 매출전표가 확정되면 반영돼요 (D-1)&#x27;},
- {id:2,store:&#x27;GS25 범어오피스점&#x27;,cat:&#x27;cvs&#x27;,amount:65000,save:6500,src:&#x27;신한 Mr.Life 10%&#x27;,srcKey:&#x27;sh&#x27;,status:&#x27;done&#x27;,d:&#x27;10.06&#x27;,t:&#x27;22:41&#x27;},
- {id:3,store:&#x27;스타벅스 범어역점&#x27;,cat:&#x27;cafe&#x27;,amount:130000,save:26000,src:&#x27;KB 톡톡D 20% 캐시백&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:&#x27;10.06&#x27;,t:&#x27;10:12&#x27;},
- {id:4,store:&#x27;빕스 대구반월당점&#x27;,cat:&#x27;dine&#x27;,amount:740000,save:111000,src:&#x27;SKT VIP 15% 할인&#x27;,srcKey:&#x27;skt&#x27;,status:&#x27;done&#x27;,d:&#x27;10.05&#x27;,t:&#x27;19:44&#x27;},
- {id:5,store:&#x27;CGV 대구한일&#x27;,cat:&#x27;film&#x27;,amount:300000,save:60000,src:&#x27;KB 톡톡D 영화 20%&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:&#x27;10.04&#x27;,t:&#x27;14:15&#x27;},
- {id:6,store:&#x27;맘스터치 동대구역점&#x27;,cat:&#x27;dine&#x27;,amount:98000,save:19600,src:&#x27;SKT VIP 20% 할인&#x27;,srcKey:&#x27;skt&#x27;,status:&#x27;missed&#x27;,d:&#x27;10.03&#x27;,t:&#x27;12:20&#x27;,note:&#x27;알림 후 2분이 지나 매장을 떠났어요&#x27;}
+ {id:1,store:&#x27;올리브영 동성로점&#x27;,cat:&#x27;beauty&#x27;,amount:456000,save:45600,src:&#x27;CJ ONE 10% 적립&#x27;,srcKey:&#x27;cj&#x27;,status:&#x27;pending&#x27;,d:demoDate(1),t:&#x27;12:30&#x27;,note:&#x27;카드사 매출전표가 확정되면 반영돼요 (D-1)&#x27;},
+ {id:2,store:&#x27;GS25 범어오피스점&#x27;,cat:&#x27;cvs&#x27;,amount:65000,save:6500,src:&#x27;신한 Mr.Life 10%&#x27;,srcKey:&#x27;sh&#x27;,status:&#x27;done&#x27;,d:demoDate(2),t:&#x27;22:41&#x27;},
+ {id:3,store:&#x27;스타벅스 범어역점&#x27;,cat:&#x27;cafe&#x27;,amount:130000,save:26000,src:&#x27;KB 톡톡D 20% 캐시백&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:demoDate(2),t:&#x27;10:12&#x27;},
+ {id:4,store:&#x27;빕스 대구반월당점&#x27;,cat:&#x27;dine&#x27;,amount:740000,save:111000,src:&#x27;SKT VIP 15% 할인&#x27;,srcKey:&#x27;skt&#x27;,status:&#x27;done&#x27;,d:demoDate(3),t:&#x27;19:44&#x27;},
+ {id:5,store:&#x27;CGV 대구한일&#x27;,cat:&#x27;film&#x27;,amount:300000,save:60000,src:&#x27;KB 톡톡D 영화 20%&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:demoDate(4),t:&#x27;14:15&#x27;},
+ {id:6,store:&#x27;맘스터치 동대구역점&#x27;,cat:&#x27;dine&#x27;,amount:98000,save:19600,src:&#x27;SKT VIP 20% 할인&#x27;,srcKey:&#x27;skt&#x27;,status:&#x27;missed&#x27;,d:demoDate(5),t:&#x27;12:20&#x27;,note:&#x27;알림 후 2분이 지나 매장을 떠났어요&#x27;}
 ];
-const PREV_DEMO=[{m:&#x27;5월&#x27;,v:98000},{m:&#x27;6월&#x27;,v:113200},{m:&#x27;7월&#x27;,v:135600},{m:&#x27;8월&#x27;,v:148400},{m:&#x27;9월&#x27;,v:172900}];let PREV=PREV_DEMO;
+const PREV_DEMO=[98000,113200,135600,148400,172900].map((v,i)=&gt;{const n=(NOW_M+6+i)%12+1;return{m:n+&#x27;월&#x27;,mm:MM2(n),v}});let PREV=PREV_DEMO;
 const SCEN=[
- {store:&#x27;스타벅스 범어역점&#x27;,short:&#x27;스타벅스범어역&#x27;,cat:&#x27;cafe&#x27;,amount:130000,save:26000,src:&#x27;KB 톡톡D 20% 캐시백&#x27;,srcKey:&#x27;kb&#x27;,card:&#x27;KB국민체크(9421)&#x27;,payCard:&#x27;kb&#x27;,how:&#x27;KB Pay를 열어 톡톡D 체크카드로 다시 결제해요&#x27;},
- {store:&#x27;파리바게뜨 수성범어점&#x27;,short:&#x27;파리바게뜨범어&#x27;,cat:&#x27;bake&#x27;,amount:180000,save:18000,src:&#x27;SKT VIP 10% 할인&#x27;,srcKey:&#x27;skt&#x27;,card:&#x27;현대카드(5530)&#x27;,payCard:&#x27;hd&#x27;,mem:0,how:&#x27;T멤버십 바코드를 보여준 뒤 현대카드 앱으로 다시 결제해요&#x27;},
- {store:&#x27;빕스 동대구역점&#x27;,short:&#x27;빕스동대구&#x27;,cat:&#x27;dine&#x27;,amount:740000,save:111000,src:&#x27;SKT VIP 15% 할인&#x27;,srcKey:&#x27;skt&#x27;,card:&#x27;현대카드(5530)&#x27;,payCard:&#x27;hd&#x27;,mem:0,how:&#x27;T멤버십 바코드를 보여준 뒤 현대카드 앱으로 다시 결제해요&#x27;}
+ {store:&#x27;스타벅스 범어역점&#x27;,short:&#x27;스타벅스범어역&#x27;,cat:&#x27;cafe&#x27;,amount:130000,save:26000,src:&#x27;KB 톡톡D 20% 캐시백&#x27;,srcKey:&#x27;kb&#x27;,card:&#x27;현대카드(5530)&#x27;,orig:&#x27;hd&#x27;,payCard:&#x27;kb&#x27;,how:&#x27;KB Pay를 열어 톡톡D 체크카드로 다시 결제해요&#x27;},
+ {store:&#x27;파리바게뜨 수성범어점&#x27;,short:&#x27;파리바게뜨범어&#x27;,cat:&#x27;bake&#x27;,amount:180000,save:18000,src:&#x27;SKT VIP 10% 할인&#x27;,srcKey:&#x27;skt&#x27;,card:&#x27;현대카드(5530)&#x27;,orig:&#x27;hd&#x27;,payCard:&#x27;hd&#x27;,memName:&#x27;SKT T멤버십&#x27;,how:&#x27;T멤버십 바코드를 보여준 뒤 현대카드 앱으로 다시 결제해요&#x27;},
+ {store:&#x27;빕스 동대구역점&#x27;,short:&#x27;빕스동대구&#x27;,cat:&#x27;dine&#x27;,amount:740000,save:111000,src:&#x27;SKT VIP 15% 할인&#x27;,srcKey:&#x27;skt&#x27;,card:&#x27;현대카드(5530)&#x27;,orig:&#x27;hd&#x27;,payCard:&#x27;hd&#x27;,memName:&#x27;SKT T멤버십&#x27;,how:&#x27;T멤버십 바코드를 보여준 뒤 현대카드 앱으로 다시 결제해요&#x27;}
 ];
+/* 시나리오는 지갑에 있는 카드·멤버십으로 만들 수 있을 때만 보여줘요 */
+const memOf=S=&gt;S.memName?MEMS.find(m=&gt;m.name===S.memName):null;
+const canScen=S=&gt;[S.orig,S.payCard].every(id=&gt;CARDS.some(c=&gt;c.id===id))&amp;&amp;(!S.memName||!!memOf(S));
 /* 카드사와 결제 앱 (앱 이름은 출시 전 카드사 확인 필요) */
 const CO={kb:[&#x27;KB국민카드&#x27;,&#x27;KB Pay&#x27;,&#x27;#F6A623&#x27;,&#x27;#2A1606&#x27;],sh:[&#x27;신한카드&#x27;,&#x27;신한 SOL페이&#x27;,&#x27;#1F3FA8&#x27;,&#x27;#FFFFFF&#x27;],hd:[&#x27;현대카드&#x27;,&#x27;현대카드 앱&#x27;,&#x27;#26282F&#x27;,&#x27;#FFFFFF&#x27;],ss:[&#x27;삼성카드&#x27;,&#x27;삼성카드 앱&#x27;,&#x27;#1428A0&#x27;,&#x27;#FFFFFF&#x27;],lt:[&#x27;롯데카드&#x27;,&#x27;디지로카&#x27;,&#x27;#C8102E&#x27;,&#x27;#FFFFFF&#x27;],hn:[&#x27;하나카드&#x27;,&#x27;하나Pay&#x27;,&#x27;#00857C&#x27;,&#x27;#FFFFFF&#x27;],wr:[&#x27;우리카드&#x27;,&#x27;우리WON카드&#x27;,&#x27;#0067AC&#x27;,&#x27;#FFFFFF&#x27;],nh:[&#x27;NH농협카드&#x27;,&#x27;NH pay&#x27;,&#x27;#00843D&#x27;,&#x27;#FFFFFF&#x27;]};
 const appOf=c=&gt;CO[c.co]?CO[c.co][1]:&#x27;카드사 앱&#x27;;
@@ -1372,7 +1380,7 @@ function loadState(sv,{demo=true,name=null,profile=null}={}){
   const restored=(Array.isArray(sv.tx)?sv.tx:[]).slice(0,300).filter(x=&gt;x&amp;&amp;Number.isSafeInteger(x.id)&amp;&amp;x.id&gt;=100&amp;&amp;[&#x27;done&#x27;,&#x27;missed&#x27;].includes(x.status)&amp;&amp;CAT[x.cat]&amp;&amp;SRC[x.srcKey]&amp;&amp;Number.isSafeInteger(x.amount)&amp;&amp;Number.isSafeInteger(x.save)&amp;&amp;x.save&gt;=0&amp;&amp;x.save&lt;=x.amount&amp;&amp;typeof x.store===&#x27;string&#x27;&amp;&amp;x.store.length&lt;=60&amp;&amp;typeof x.src===&#x27;string&#x27;&amp;&amp;x.src.length&lt;=60&amp;&amp;/^\d{2}\.\d{2}$/.test(x.d)&amp;&amp;/^\d{2}:\d{2}$/.test(x.t)).map(x=&gt;({id:x.id,store:x.store,cat:x.cat,amount:x.amount,save:x.save,src:x.src,srcKey:x.srcKey,status:x.status,d:x.d,t:x.t,note:typeof x.note===&#x27;string&#x27;?x.note.slice(0,100):&#x27;&#x27;}));
   restored.sort((a,b)=&gt;b.id-a.id);
   TX=[...restored,...(demoData?BASE_TX:[])];
-  PREV=demoData?PREV_DEMO:PREV_DEMO.map(x=&gt;({m:x.m,v:0}));
+  PREV=demoData?PREV_DEMO:PREV_DEMO.map(x=&gt;({...x,v:0}));
   nextId=Math.max(100,...TX.map(x=&gt;x.id+1));
   scenIdx=Number.isSafeInteger(sv.scenIdx)&amp;&amp;sv.scenIdx&gt;=0?sv.scenIdx:0;
   SWITCHES.forEach(([k,,,d])=&gt;prefs[k]=typeof sv.prefs?.[k]===&#x27;boolean&#x27;?sv.prefs[k]:d);
@@ -1384,6 +1392,7 @@ function loadState(sv,{demo=true,name=null,profile=null}={}){
   FEE=FEE_OPTS.includes(sv.fee)?sv.fee:0.2;
   return fresh}
 loadState(readSaved(KEY),{demo:true,name:&#x27;김리캐&#x27;});
+$$(&#x27;[data-mon]&#x27;).forEach(e=&gt;e.textContent=NOW_M);
 const THEME_KEY=&#x27;rc-theme&#x27;;
 const ICON_MOON=&#x27;&lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z&quot;/&gt;&lt;/svg&gt;&#x27;;
 const ICON_SUN=&#x27;&lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4.2&quot;/&gt;&lt;path d=&quot;M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4&quot;/&gt;&lt;/svg&gt;&#x27;;
@@ -1396,8 +1405,8 @@ function persist(){try{localStorage.setItem(activeKey,JSON.stringify({v:2,demo:d
 const saveNote=()=&gt;saveFailed?&#x27; 이 브라우저에 저장하지 못해 새로고침하면 사라져요.&#x27;:&#x27;&#x27;;
 
 /* ---------- 도구 ---------- */
-function totals(){const done=TX.filter(x=&gt;x.status===&#x27;done&#x27;),miss=TX.filter(x=&gt;x.status===&#x27;missed&#x27;);const rec=done.reduce((a,x)=&gt;a+x.save,0),fee=done.reduce((a,x)=&gt;a+feeFor(x),0);
-  return{rec,fee,net:rec-fee,count:done.length,pending:TX.filter(x=&gt;x.status===&#x27;pending&#x27;).reduce((a,x)=&gt;a+x.save,0),missed:miss.reduce((a,x)=&gt;a+x.save,0),missedN:miss.length}}
+function totals(list=monthTX()){const done=list.filter(x=&gt;x.status===&#x27;done&#x27;),miss=list.filter(x=&gt;x.status===&#x27;missed&#x27;);const rec=done.reduce((a,x)=&gt;a+x.save,0),fee=done.reduce((a,x)=&gt;a+feeFor(x),0);
+  return{rec,fee,net:rec-fee,count:done.length,pending:list.filter(x=&gt;x.status===&#x27;pending&#x27;).reduce((a,x)=&gt;a+x.save,0),missed:miss.reduce((a,x)=&gt;a+x.save,0),missedN:miss.length}}
 function barcode(code,h=84){const d=normalize(code).replace(/\D/g,&#x27;&#x27;);const seq=[2,1,1,2];[...d].forEach((c,i)=&gt;{const n=+c;seq.push(1+n%3,1+(n+i)%2,1+((n*7+i)%4&gt;1?1:0),1+(n+3)%3)});seq.push(2,1,1,2);
   let x=8,bars=&#x27;&#x27;;seq.forEach((w,i)=&gt;{if(i%2===0)bars+=`&lt;rect x=&quot;${x.toFixed(1)}&quot; y=&quot;0&quot; width=&quot;${(w*1.6).toFixed(1)}&quot; height=&quot;${h}&quot; fill=&quot;#1E150B&quot;/&gt;`;x+=w*1.6});
   return `&lt;svg viewBox=&quot;0 0 ${(x+8).toFixed(1)} ${h}&quot; preserveAspectRatio=&quot;none&quot; style=&quot;height:${h}px&quot; role=&quot;img&quot; aria-label=&quot;시연용 바코드 ${esc(code)}&quot;&gt;${bars}&lt;/svg&gt;`}
@@ -1409,7 +1418,7 @@ const dayLabel=d=&gt;{const [m,dd]=d.split(&#x27;.&#x27;);return `${+m}월 ${+dd
 const STAT={done:&#x27;재결제 완료&#x27;,pending:&#x27;확인 중&#x27;,missed:&#x27;놓친 혜택&#x27;};
 function rowHTML(x,attr=&#x27;data-tx&#x27;){const amt=x.status===&#x27;missed&#x27;?`&lt;b class=&quot;lost&quot;&gt;${won(x.save)}&lt;/b&gt;&lt;small&gt;놓침&lt;/small&gt;`:x.status===&#x27;pending&#x27;?`&lt;b&gt;+${won(x.save)}&lt;/b&gt;&lt;small&gt;확인 중&lt;/small&gt;`:`&lt;b class=&quot;money&quot;&gt;+${won(x.save)}&lt;/b&gt;&lt;small&gt;${won(x.amount)}원 결제&lt;/small&gt;`;
   return `&lt;button class=&quot;row&quot; ${attr}=&quot;${x.id}&quot;&gt;${mark(x.store)}&lt;span class=&quot;rmain&quot;&gt;&lt;b&gt;${esc(x.store)}&lt;/b&gt;&lt;small&gt;${esc(x.src)}&lt;/small&gt;&lt;/span&gt;&lt;span class=&quot;ramt&quot;&gt;${amt}&lt;/span&gt;&lt;/button&gt;`}
-function grouped(key){const by={};TX.filter(x=&gt;x.status===&#x27;done&#x27;).forEach(x=&gt;by[x[key]]=(by[x[key]]||0)+x.save);return Object.entries(by).sort((a,b)=&gt;b[1]-a[1])}
+function grouped(key){const by={};monthTX().filter(x=&gt;x.status===&#x27;done&#x27;).forEach(x=&gt;by[x[key]]=(by[x[key]]||0)+x.save);return Object.entries(by).sort((a,b)=&gt;b[1]-a[1])}
 
 /* ---------- 헤더 위로 올라오는 시트 ---------- */
 function syncSlide(v){const hero=v.querySelector(&#x27;.hero&#x27;);const max=Math.max(1,hero.offsetHeight-30);v.style.setProperty(&#x27;--p&#x27;,Math.min(1,Math.max(0,v.scrollTop/max)).toFixed(3));if(!v.hidden)sbUpdate()}
@@ -1418,11 +1427,11 @@ function toggleSlide(v){const max=v.querySelector(&#x27;.hero&#x27;).offsetHeigh
 
 /* ---------- 홈 ---------- */
 function renderHome(flashId){
-  const T=totals(),last=PREV[PREV.length-1].v;
+  const T=totals(),last=prevV(PREV[PREV.length-1]);
   const db=$(&#x27;#demoBtn&#x27;);if(db){db.dataset.armed=&#x27;&#x27;;db.classList.toggle(&#x27;apply&#x27;,!demoData);db.textContent=demoData?&#x27;시연 데이터 사용 중 · 비우기&#x27;:&#x27;시연 데이터 적용&#x27;;db.setAttribute(&#x27;aria-label&#x27;,demoData?&#x27;시연 데이터를 비우고 0원으로 시작하기&#x27;:&#x27;예시 결제 내역으로 채우기&#x27;)}
   countTo($(&#x27;#hTotal&#x27;),T.rec);
   $(&#x27;#hiName&#x27;).textContent=`안녕하세요, ${userName} 님`;$(&#x27;#lPend&#x27;).textContent=won(T.pending);$(&#x27;#lFeeLbl&#x27;).textContent=&#x27;수수료 &#x27;+pct()+&#x27;%&#x27;;$(&#x27;#lFee&#x27;).textContent=T.fee?&#x27;−&#x27;+won(T.fee):&#x27;0&#x27;;$(&#x27;#lNet&#x27;).textContent=won(T.net);$(&#x27;#miniNet&#x27;).textContent=won(T.net);
-  $(&#x27;#hSub&#x27;).innerHTML=!T.count&amp;&amp;!T.pending?&#x27;아직 되찾은 돈이 없어요. 결제하면 바로 알려드릴게요.&#x27;:T.rec&gt;=last?`재결제 ${T.count}회 · 9월보다 &lt;b class=&quot;num&quot;&gt;${won(T.rec-last)}원&lt;/b&gt; 더`:`재결제 ${T.count}회 · 9월보다 &lt;b class=&quot;num&quot;&gt;${won(last-T.rec)}원&lt;/b&gt; 적어요`;
+  $(&#x27;#hSub&#x27;).innerHTML=!T.count&amp;&amp;!T.pending?&#x27;아직 되찾은 돈이 없어요. 결제하면 바로 알려드릴게요.&#x27;:T.rec&gt;=last?`재결제 ${T.count}회 · ${PREV_M}월보다 &lt;b class=&quot;num&quot;&gt;${won(T.rec-last)}원&lt;/b&gt; 더`:`재결제 ${T.count}회 · ${PREV_M}월보다 &lt;b class=&quot;num&quot;&gt;${won(last-T.rec)}원&lt;/b&gt; 적어요`;
   const ext=`&lt;svg width=&quot;11&quot; height=&quot;11&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.6&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M7 17 17 7M9 7h8v8&quot;/&gt;&lt;/svg&gt;`,lk=`&lt;svg width=&quot;11&quot; height=&quot;11&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.6&quot; stroke-linecap=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;5&quot; y=&quot;11&quot; width=&quot;14&quot; height=&quot;10&quot; rx=&quot;2&quot;/&gt;&lt;path d=&quot;M8 11V8a4 4 0 0 1 8 0v3&quot;/&gt;&lt;/svg&gt;`;
   const qEl=$(&#x27;#quick&#x27;);if(qEl)qEl.innerHTML=CARDS.map((c,i)=&gt;`&lt;button class=&quot;qcard&quot; style=&quot;background:${c.art};color:${c.on}&quot; data-card=&quot;${i}&quot; aria-label=&quot;${esc(c.bank+&#x27; &#x27;+c.name)}, ${esc(appOf(c))}에서 결제하기&quot;&gt;&lt;b&gt;${esc(c.bank)}&lt;br&gt;${esc(c.name)} ··${esc(c.last)}&lt;/b&gt;&lt;span class=&quot;qapp&quot;&gt;${esc(appOf(c))} ${ext}&lt;/span&gt;&lt;/button&gt;`).join(&#x27;&#x27;)+
     MEMS.map((m,i)=&gt;`&lt;button class=&quot;qcard qmem&quot; data-mem=&quot;${i}&quot; aria-label=&quot;${esc(m.name)} 바코드, 본인 확인 후 열기&quot;&gt;&lt;span class=&quot;mk&quot; style=&quot;--m:${m.m[1]}&quot; aria-hidden=&quot;true&quot;&gt;${esc(m.m[0])}&lt;/span&gt;&lt;b&gt;${esc(m.name)}&lt;/b&gt;&lt;span class=&quot;lockic&quot;&gt;${lk} 지문 확인&lt;/span&gt;&lt;/button&gt;`).join(&#x27;&#x27;);
@@ -1509,7 +1518,7 @@ function bioSheet(next){bioNext=next;openSheet(&#x27;본인 확인&#x27;,`&lt;di
 let filt=&#x27;all&#x27;;const FILTERS=[[&#x27;all&#x27;,&#x27;전체&#x27;],[&#x27;done&#x27;,&#x27;완료&#x27;],[&#x27;pending&#x27;,&#x27;확인 중&#x27;],[&#x27;missed&#x27;,&#x27;놓침&#x27;]];
 const open=new Set();
 function renderHistory(){
-  const T=totals();
+  const T=totals(TX);
   $(&#x27;#miniHist&#x27;).textContent=won(T.rec);
   $(&#x27;#hTiles&#x27;).innerHTML=`&lt;button class=&quot;tile&quot; data-filter=&quot;done&quot;&gt;&lt;small&gt;재결제 완료&lt;/small&gt;&lt;b class=&quot;money&quot;&gt;${won(T.rec)}&lt;/b&gt;&lt;/button&gt;&lt;button class=&quot;tile&quot; data-filter=&quot;pending&quot;&gt;&lt;small&gt;확인 중&lt;/small&gt;&lt;b style=&quot;color:var(--pend)&quot;&gt;${won(T.pending)}&lt;/b&gt;&lt;/button&gt;&lt;button class=&quot;tile&quot; data-filter=&quot;missed&quot;&gt;&lt;small&gt;놓친 혜택&lt;/small&gt;&lt;b style=&quot;color:var(--miss)&quot;&gt;${won(T.missed)}&lt;/b&gt;&lt;/button&gt;`;
   $(&#x27;#chips&#x27;).innerHTML=FILTERS.map(([k,n])=&gt;`&lt;button class=&quot;chip&quot; role=&quot;tab&quot; id=&quot;f-${k}&quot; aria-selected=&quot;${filt===k}&quot; tabindex=&quot;${filt===k?0:-1}&quot; data-filter=&quot;${k}&quot;&gt;${n} &lt;span class=&quot;num&quot;&gt;${k===&#x27;all&#x27;?TX.length:TX.filter(x=&gt;x.status===k).length}&lt;/span&gt;&lt;/button&gt;`).join(&#x27;&#x27;);
@@ -1540,7 +1549,7 @@ function renderStats(){
   $(&#x27;#sRate&#x27;).textContent=Math.round(rate*100)+&#x27;%&#x27;;$(&#x27;#miniRate&#x27;).textContent=Math.round(rate*100)+&#x27;%&#x27;;$(&#x27;#sRateSub&#x27;).textContent=`알림 ${n}번 중 ${T.count}번 재결제`;
   requestAnimationFrame(()=&gt;$(&#x27;#sRateBar&#x27;).style.width=rate*100+&#x27;%&#x27;);
   $(&#x27;#sMiss&#x27;).textContent=won(T.missed);$(&#x27;#sMissSub&#x27;).textContent=`${T.missedN}건 · 수수료 없음`;
-  const data=[...PREV,{m:&#x27;10월&#x27;,v:T.rec,cur:true}];
+  const data=[...PREV.map(p=&gt;({m:p.m,v:prevV(p)})),{m:NOW_M+&#x27;월&#x27;,v:T.rec,cur:true}];
   const W=340,H=190,pt=26,pb=28,max=Math.max(...data.map(d=&gt;d.v),1);
   const step=max&gt;200000?100000:50000,top=Math.ceil(max*1.1/step)*step,y=v=&gt;pt+(H-pt-pb)*(1-v/top),bw=W/data.length;
   let s=`&lt;svg viewBox=&quot;0 0 ${W} ${H}&quot; width=&quot;100%&quot; role=&quot;group&quot; aria-label=&quot;월별 되찾은 돈 막대 차트, 단위 만 원&quot;&gt;`;
@@ -1552,11 +1561,11 @@ function renderStats(){
   $(&#x27;#catTotal&#x27;).textContent=&#x27;합계 &#x27;+won(T.rec);
   $(&#x27;#cats&#x27;).innerHTML=cats.map(([k,v])=&gt;`&lt;button class=&quot;cat&quot; data-cat=&quot;${k}&quot; style=&quot;--c:${CAT[k][1]}&quot;&gt;&lt;span class=&quot;nm&quot;&gt;${CAT[k][0]}&lt;small&gt;${T.rec?Math.round(v/T.rec*100):0}%&lt;/small&gt;&lt;/span&gt;&lt;b&gt;${won(v)}&lt;/b&gt;&lt;span class=&quot;tr&quot;&gt;&lt;i data-w=&quot;${v/mx*100}&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;`).join(&#x27;&#x27;)||&#x27;&lt;p class=&quot;empty&quot;&gt;재결제 완료 건이 생기면 업종별로 보여드려요.&lt;/p&gt;&#x27;;
   requestAnimationFrame(()=&gt;$$(&#x27;#cats i&#x27;).forEach(i=&gt;i.style.width=i.dataset.w+&#x27;%&#x27;));
-  const bs={};TX.filter(x=&gt;x.status===&#x27;done&#x27;).forEach(x=&gt;{bs[x.srcKey]=bs[x.srcKey]||{v:0,n:0};bs[x.srcKey].v+=x.save;bs[x.srcKey].n++});
+  const bs={};monthTX().filter(x=&gt;x.status===&#x27;done&#x27;).forEach(x=&gt;{bs[x.srcKey]=bs[x.srcKey]||{v:0,n:0};bs[x.srcKey].v+=x.save;bs[x.srcKey].n++});
   $(&#x27;#rank&#x27;).innerHTML=Object.entries(bs).sort((a,b)=&gt;b[1].v-a[1].v).map(([k,o],i)=&gt;`&lt;button class=&quot;rank&quot; data-src=&quot;${k}&quot;&gt;&lt;span class=&quot;no&quot;&gt;${i+1}&lt;/span&gt;&lt;span class=&quot;mini-card&quot; style=&quot;--art:${SRC[k][1]}&quot;&gt;&lt;/span&gt;&lt;span class=&quot;rmain&quot;&gt;&lt;b&gt;${esc(SRC[k][0])}&lt;/b&gt;&lt;small&gt;${o.n}번 재결제&lt;/small&gt;&lt;/span&gt;&lt;b class=&quot;v&quot;&gt;+${won(o.v)}&lt;/b&gt;&lt;/button&gt;`).join(&#x27;&#x27;);
 }
-function openMonth(i){if(i===PREV.length){listSheet(&#x27;10월 되찾은 돈&#x27;,TX.filter(x=&gt;x.status===&#x27;done&#x27;),&#x27;이번 달 재결제 완료 건의 할인·적립 합계예요. 수수료 차감 전 금액이에요.&#x27;);return}
-  const m=PREV[i];openSheet(m.m+&#x27; 되찾은 돈&#x27;,`&lt;div class=&quot;slip&quot;&gt;&lt;div class=&quot;ln total&quot;&gt;&lt;span&gt;합계&lt;/span&gt;&lt;span class=&quot;money&quot;&gt;${won(m.v)}원&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class=&quot;lead&quot;&gt;월별 추이를 보여주기 위한 예시 집계 값이에요. 이 달의 개별 결제는 데모에 들어 있지 않아요.&lt;/p&gt;`)}
+function openMonth(i){if(i===PREV.length){listSheet(NOW_M+&#x27;월 되찾은 돈&#x27;,monthTX().filter(x=&gt;x.status===&#x27;done&#x27;),&#x27;이번 달 재결제 완료 건의 할인·적립 합계예요. 수수료 차감 전 금액이에요.&#x27;);return}
+  const m=PREV[i];openSheet(m.m+&#x27; 되찾은 돈&#x27;,`&lt;div class=&quot;slip&quot;&gt;&lt;div class=&quot;ln total&quot;&gt;&lt;span&gt;합계&lt;/span&gt;&lt;span class=&quot;money&quot;&gt;${won(prevV(m))}원&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class=&quot;lead&quot;&gt;월별 추이를 보여주기 위한 예시 집계 값이에요. 이 달의 개별 결제는 데모에 들어 있지 않아요.&lt;/p&gt;`)}
 $(&#x27;#chart&#x27;).addEventListener(&#x27;click&#x27;,e=&gt;{const g=e.target.closest(&#x27;[data-month]&#x27;);if(g)openMonth(+g.dataset.month)});
 $(&#x27;#chart&#x27;).addEventListener(&#x27;keydown&#x27;,e=&gt;{const g=e.target.closest(&#x27;[data-month]&#x27;);if(g&amp;&amp;(e.key===&#x27;Enter&#x27;||e.key===&#x27; &#x27;)){e.preventDefault();openMonth(+g.dataset.month)}});
 
@@ -1619,8 +1628,8 @@ function listSheet(title,list,explain){const total=list.reduce((a,x)=&gt;a+x.sav
 function txSheet(id){const x=TX.find(x=&gt;x.id===id);if(!x)return;const fee=x.status===&#x27;done&#x27;?feeFor(x):0;
   openSheet(x.store,`&lt;p class=&quot;lead&quot;&gt;${dayLabel(x.d)} ${esc(x.t)} · &lt;span class=&quot;tag ${x.status}&quot;&gt;${STAT[x.status]}&lt;/span&gt;&lt;/p&gt;&lt;div class=&quot;slip&quot;&gt;&lt;div class=&quot;ln&quot;&gt;&lt;span&gt;결제 금액&lt;/span&gt;&lt;span&gt;${won(x.amount)}원&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;ln&quot;&gt;&lt;span&gt;${esc(x.src)}&lt;/span&gt;&lt;span&gt;${won(x.save)}원&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;ln&quot;&gt;&lt;span&gt;${feeLbl(x)}&lt;/span&gt;&lt;span&gt;${won(fee)}원&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;ln total&quot;&gt;&lt;span&gt;${x.status===&#x27;done&#x27;?&#x27;내 순절약&#x27;:&#x27;상태&#x27;}&lt;/span&gt;&lt;span class=&quot;${x.status===&#x27;done&#x27;?&#x27;money&#x27;:&#x27;&#x27;}&quot;&gt;${x.status===&#x27;done&#x27;?won(x.save-fee)+&#x27;원&#x27;:STAT[x.status]}&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;${x.note?`&lt;p class=&quot;lead&quot;&gt;${esc(x.note)}&lt;/p&gt;`:&#x27;&#x27;}&lt;p class=&quot;note&quot; style=&quot;text-align:left&quot;&gt;혜택 근거: ${esc(SRC[x.srcKey][2])} (예시)&lt;/p&gt;&lt;button class=&quot;btn btn-soft btn-block&quot; data-show-in-history=&quot;${x.id}&quot;&gt;내역에서 보기&lt;/button&gt;`)}
 function feeChips(from){return `&lt;div class=&quot;np-chips&quot; role=&quot;group&quot; aria-label=&quot;테스트 수수료율&quot;&gt;${FEE_OPTS.map(f=&gt;`&lt;button aria-selected=&quot;${f===FEE}&quot; data-fee=&quot;${f}&quot; data-fee-from=&quot;${from}&quot;&gt;${Math.round(f*100)}%&lt;/button&gt;`).join(&#x27;&#x27;)}&lt;/div&gt;`}
-function stmtSheet(){const T=totals(),done=TX.filter(x=&gt;x.status===&#x27;done&#x27;),free=done.filter(isFree),waived=free.reduce((a,x)=&gt;a+Math.round(x.save*FEE),0);
-  openSheet(&#x27;10월 정산 리포트&#x27;,`&lt;p class=&quot;lead&quot;&gt;&lt;span class=&quot;tag pending&quot;&gt;테스트&lt;/span&gt; 이번 단계에서는 실제로 청구하거나 결제하지 않아요. 수수료율을 정하기 위한 계산만 보여드려요.&lt;/p&gt;
+function stmtSheet(){const T=totals(),done=monthTX().filter(x=&gt;x.status===&#x27;done&#x27;),free=done.filter(isFree),waived=free.reduce((a,x)=&gt;a+Math.round(x.save*FEE),0);
+  openSheet(NOW_M+&#x27;월 정산 리포트&#x27;,`&lt;p class=&quot;lead&quot;&gt;&lt;span class=&quot;tag pending&quot;&gt;테스트&lt;/span&gt; 이번 단계에서는 실제로 청구하거나 결제하지 않아요. 수수료율을 정하기 위한 계산만 보여드려요.&lt;/p&gt;
   &lt;div class=&quot;field&quot;&gt;&lt;span class=&quot;label&quot;&gt;테스트 수수료율&lt;/span&gt;${feeChips(&#x27;stmt&#x27;)}&lt;/div&gt;
   &lt;div class=&quot;slip&quot;&gt;&lt;div class=&quot;ln&quot;&gt;&lt;span&gt;되찾은 돈 · ${done.length}건&lt;/span&gt;&lt;span&gt;${won(T.rec)}원&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;ln&quot;&gt;&lt;span&gt;성공 수수료 ${pct()}%&lt;/span&gt;&lt;span&gt;${won(T.fee+waived)}원&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;ln&quot;&gt;&lt;span&gt;첫 ${FREE_N}회 수수료 면제 · ${free.length}건&lt;/span&gt;&lt;span class=&quot;money&quot;&gt;−${won(waived)}원&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;ln total&quot;&gt;&lt;span&gt;계산된 수수료 · 청구 없음&lt;/span&gt;&lt;span&gt;${won(T.fee)}원&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;p class=&quot;lead&quot;&gt;수수료를 빼도 &lt;b class=&quot;money num&quot;&gt;${won(T.net)}원&lt;/b&gt;이 남아요. 아낀 게 없으면 수수료도 0원이에요. 확인 중 ${won(T.pending)}원은 확정되면 다음 리포트에 들어가요.&lt;/p&gt;&lt;button class=&quot;btn btn-ink btn-block&quot; data-close&gt;확인&lt;/button&gt;`)}
@@ -1673,6 +1682,7 @@ document.addEventListener(&#x27;click&#x27;,e=&gt;{
   if(d.close!==undefined){closeSheet();return}
   if(d.open===&#x27;stmt&#x27;)return stmtSheet();if(d.open===&#x27;settings&#x27;)return settingsSheet();if(d.open===&#x27;add&#x27;)return addSheet();if(d.open===&#x27;reminders&#x27;)return remindersSheet();if(d.open===&#x27;profile&#x27;)return profileSheet();
   if(d.flow!==undefined)return startFlow();
+  if(d.flowDemo!==undefined){closeSheet();setDemo(true);return startFlow()}
   if(d.tx)return txSheet(+d.tx);if(d.txDetail)return txSheet(+d.txDetail);
   if(d.card!==undefined)return handoff(+d.card);
   if(d.paychooser!==undefined)return payChooser();
@@ -1692,11 +1702,11 @@ document.addEventListener(&#x27;click&#x27;,e=&gt;{
   if(d.gotoCard){go(&#x27;wallet&#x27;);const i=CARDS.findIndex(c=&gt;c.id===d.gotoCard);if(i&gt;=0){cur=i;renderWallet()}return}
   if(d.filter){filt=d.filter;renderHistory();return}
   if(d.expand){const id=+d.expand;open.has(id)?open.delete(id):open.add(id);$(&#x27;#d-&#x27;+id).hidden=!open.has(id);b.setAttribute(&#x27;aria-expanded&#x27;,String(open.has(id)));return}
-  if(d.cat)return listSheet(CAT[d.cat][0]+&#x27; 절약 내역&#x27;,TX.filter(x=&gt;x.status===&#x27;done&#x27;&amp;&amp;x.cat===d.cat),&#x27;재결제 완료 건의 할인·적립 합계예요. 수수료 차감 전 금액이고 확인 중·놓친 혜택은 빠져 있어요.&#x27;);
-  if(d.src)return listSheet(SRC[d.src][0],TX.filter(x=&gt;x.status===&#x27;done&#x27;&amp;&amp;x.srcKey===d.src),&#x27;이 카드나 멤버십으로 재결제해서 받은 혜택이에요.&#x27;);
+  if(d.cat)return listSheet(CAT[d.cat][0]+&#x27; 절약 내역&#x27;,monthTX().filter(x=&gt;x.status===&#x27;done&#x27;&amp;&amp;x.cat===d.cat),&#x27;재결제 완료 건의 할인·적립 합계예요. 수수료 차감 전 금액이고 확인 중·놓친 혜택은 빠져 있어요.&#x27;);
+  if(d.src)return listSheet(SRC[d.src][0],monthTX().filter(x=&gt;x.status===&#x27;done&#x27;&amp;&amp;x.srcKey===d.src),&#x27;이 카드나 멤버십으로 재결제해서 받은 혜택이에요.&#x27;);
   if(d.insight===&#x27;missed&#x27;)return openSheet(&#x27;자주 놓치는 순간&#x27;,`&lt;p class=&quot;lead&quot;&gt;금요일 18~22시 외식을 알림 예시로 보여주고 있어요. +6,200원은 안내용 예시 값이고 아래 결제 목록에서 계산한 값이 아니에요.&lt;/p&gt;&lt;p class=&quot;lead&quot;&gt;외식 전에 지갑에서 통신사 등급과 멤버십 바코드를 확인해주세요. 실제 조건은 가맹점마다 달라요.&lt;/p&gt;&lt;div class=&quot;rows&quot;&gt;${TX.filter(x=&gt;x.status===&#x27;missed&#x27;).map(x=&gt;rowHTML(x,&#x27;data-tx-detail&#x27;)).join(&#x27;&#x27;)}&lt;/div&gt;`);
-  if(d.insight===&#x27;success&#x27;){const T=totals();return listSheet(&#x27;재결제 성공률&#x27;,TX.filter(x=&gt;x.status!==&#x27;pending&#x27;),`완료 ${T.count}건 ÷ (완료 ${T.count}건 + 놓침 ${T.missedN}건)으로 계산해요. 확인 중인 결제는 빼요.`)}
-  if(d.insight===&#x27;missedAmount&#x27;)return listSheet(&#x27;놓친 혜택&#x27;,TX.filter(x=&gt;x.status===&#x27;missed&#x27;),&#x27;재결제하지 못한 건에서 받을 수 있었던 혜택이에요. 수수료는 없어요.&#x27;);
+  if(d.insight===&#x27;success&#x27;){const T=totals();return listSheet(&#x27;재결제 성공률&#x27;,monthTX().filter(x=&gt;x.status!==&#x27;pending&#x27;),`완료 ${T.count}건 ÷ (완료 ${T.count}건 + 놓침 ${T.missedN}건)으로 계산해요. 확인 중인 결제는 빼요.`)}
+  if(d.insight===&#x27;missedAmount&#x27;)return listSheet(&#x27;놓친 혜택&#x27;,monthTX().filter(x=&gt;x.status===&#x27;missed&#x27;),&#x27;재결제하지 못한 건에서 받을 수 있었던 혜택이에요. 수수료는 없어요.&#x27;);
   if(d.showInHistory){const id=+d.showInHistory;closeSheet();filt=&#x27;all&#x27;;$(&#x27;#histQ&#x27;).value=&#x27;&#x27;;open.add(id);go(&#x27;history&#x27;);const r=$(`#histList [data-row=&quot;${id}&quot;]`);if(r){r.scrollIntoView({block:&#x27;center&#x27;,behavior:reduce?&#x27;auto&#x27;:&#x27;smooth&#x27;});r.classList.add(&#x27;flash&#x27;)}return}
   if(d.sw){const v=!prefs[d.sw];prefs[d.sw]=v;b.setAttribute(&#x27;aria-checked&#x27;,String(v));persist();toast(&#x27;설정을 바꿨어요.&#x27;+saveNote());return}
   if(d.cond)return condSheet(d.cond);
@@ -1728,8 +1738,10 @@ const later=(f,ms)=&gt;timers.push(setTimeout(f,reduce?Math.min(ms,150):ms));
 function nowParts(){const d=new Date(),p=n=&gt;String(n).padStart(2,&#x27;0&#x27;);return{hm:d.getHours()+&#x27;:&#x27;+p(d.getMinutes()),md:`${d.getMonth()+1}/${d.getDate()}`,d:`${p(d.getMonth()+1)}.${p(d.getDate())}`,t:`${p(d.getHours())}:${p(d.getMinutes())}`,full:d.toLocaleDateString(&#x27;ko-KR&#x27;,{month:&#x27;long&#x27;,day:&#x27;numeric&#x27;,weekday:&#x27;long&#x27;})}}
 function showPanel(el){$$(&#x27;#flow .panel-f&#x27;).forEach(p=&gt;p.inert=p!==el);el.tabIndex=-1;el.focus({preventScroll:true})}
 const X=`&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.4&quot; stroke-linecap=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M6 6l12 12M18 6 6 18&quot;/&gt;&lt;/svg&gt;`;
-function startFlow(){if(flow.classList.contains(&#x27;on&#x27;))return;closeSheet();flowFocus=document.activeElement;recorded=false;
-  const S=SCEN[scenIdx%SCEN.length],N=nowParts();scenIdx++;persist();
+function startFlow(){if(flow.classList.contains(&#x27;on&#x27;))return;closeSheet();
+  const pool=SCEN.filter(canScen);if(!pool.length){openSheet(&#x27;재결제 체험&#x27;,`&lt;p class=&quot;lead&quot;&gt;리캐치는 지갑에 등록한 카드와 멤버십의 혜택만 추천해요. 지금 지갑에는 혜택 정보가 연결된 카드가 없어요.&lt;/p&gt;&lt;button class=&quot;btn btn-brand btn-block&quot; data-flow-demo&gt;시연 데이터로 체험하기&lt;/button&gt;`);return}
+  flowFocus=document.activeElement;recorded=false;
+  const S=pool[scenIdx%pool.length],N=nowParts();scenIdx++;persist();
   $(&#x27;#mainUi&#x27;).inert=true;flow.setAttribute(&#x27;aria-hidden&#x27;,&#x27;false&#x27;);flow.classList.add(&#x27;on&#x27;);
   flow.innerHTML=`&lt;div class=&quot;panel-f lock&quot; id=&quot;lock&quot;&gt;&lt;button class=&quot;ibtn x&quot; data-end aria-label=&quot;체험 닫기&quot;&gt;${X}&lt;/button&gt;&lt;div class=&quot;date&quot;&gt;${N.full}&lt;/div&gt;&lt;div class=&quot;clock&quot;&gt;${N.hm}&lt;/div&gt;&lt;div class=&quot;lstack&quot; id=&quot;ls&quot;&gt;&lt;/div&gt;&lt;div class=&quot;hint&quot;&gt;예시 결제로 동작 과정을 보여드려요&lt;/div&gt;&lt;/div&gt;`;
   showPanel($(&#x27;#lock&#x27;));const ls=$(&#x27;#ls&#x27;);
@@ -1746,7 +1758,7 @@ function pay(S,N){if($(&#x27;#payP&#x27;))return;
   flow.insertAdjacentHTML(&#x27;beforeend&#x27;,`&lt;div class=&quot;panel-f pay&quot; id=&quot;payP&quot;&gt;&lt;div class=&quot;pay-h&quot;&gt;${mark(S.store)}&lt;div&gt;&lt;b&gt;${esc(S.store)}&lt;/b&gt;&lt;small&gt;${N.hm} 결제 · ${won(S.amount)}원&lt;/small&gt;&lt;/div&gt;&lt;button class=&quot;ibtn&quot; data-end aria-label=&quot;닫기&quot;&gt;${X}&lt;/button&gt;&lt;/div&gt;
   &lt;div class=&quot;pay-hero&quot;&gt;&lt;div class=&quot;timer&quot;&gt;&lt;svg width=&quot;96&quot; height=&quot;96&quot; viewBox=&quot;0 0 100 100&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle class=&quot;tr&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;44&quot; fill=&quot;none&quot; stroke-width=&quot;8&quot;/&gt;&lt;circle class=&quot;tp&quot; id=&quot;tRing&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;44&quot; fill=&quot;none&quot; stroke-width=&quot;8&quot; stroke-linecap=&quot;round&quot; stroke-dasharray=&quot;276.5&quot; stroke-dashoffset=&quot;0&quot;/&gt;&lt;/svg&gt;&lt;div&gt;&lt;b id=&quot;tTxt&quot;&gt;2:00&lt;/b&gt;&lt;small&gt;남은 시간&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div style=&quot;display:flex;flex-direction:column;min-width:0&quot;&gt;&lt;span class=&quot;badge&quot;&gt;${esc(S.src)}&lt;/span&gt;&lt;h3&gt;다시 결제하면&lt;br&gt;&lt;span class=&quot;num&quot;&gt;${won(S.save)}원&lt;/span&gt; 아껴요&lt;/h3&gt;&lt;/div&gt;&lt;/div&gt;
-  ${S.mem!==undefined&amp;&amp;MEMS[S.mem]?`&lt;div class=&quot;pass&quot;&gt;&lt;div class=&quot;pass-top&quot; style=&quot;--pc:${MEMS[S.mem].m[1]}&quot;&gt;&lt;div&gt;&lt;b&gt;${esc(MEMS[S.mem].name)}&lt;/b&gt;&lt;small&gt;먼저 이 바코드를 보여주세요&lt;/small&gt;&lt;/div&gt;&lt;span&gt;${esc(MEMS[S.mem].tier)}&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;code&quot;&gt;${barcode(MEMS[S.mem].code,80)}&lt;div class=&quot;num&quot;&gt;${esc(MEMS[S.mem].code)}&lt;/div&gt;&lt;p&gt;시연용 이미지 · 이 휴대폰에만 저장된 바코드&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;`:&#x27;&#x27;}
+  ${memOf(S)?`&lt;div class=&quot;pass&quot;&gt;&lt;div class=&quot;pass-top&quot; style=&quot;--pc:${memOf(S).m[1]}&quot;&gt;&lt;div&gt;&lt;b&gt;${esc(memOf(S).name)}&lt;/b&gt;&lt;small&gt;먼저 이 바코드를 보여주세요&lt;/small&gt;&lt;/div&gt;&lt;span&gt;${esc(memOf(S).tier)}&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;code&quot;&gt;${barcode(memOf(S).code,80)}&lt;div class=&quot;num&quot;&gt;${esc(memOf(S).code)}&lt;/div&gt;&lt;p&gt;시연용 이미지 · 이 휴대폰에만 저장된 바코드&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;`:&#x27;&#x27;}
   ${(()=&gt;{const ci=CARDS.findIndex(c=&gt;c.id===S.payCard),c=CARDS[ci];return c?`&lt;button class=&quot;btn btn-ink btn-block&quot; data-card=&quot;${ci}&quot;&gt;${esc(appOf(c))}로 다시 결제 ↗&lt;/button&gt;`:&#x27;&#x27;})()}
   &lt;ol class=&quot;steps&quot;&gt;&lt;li&gt;&lt;span class=&quot;num&quot;&gt;01&lt;/span&gt;&lt;span&gt;직원에게 &lt;b&gt;&quot;방금 결제 취소하고 다시 할게요&quot;&lt;/b&gt;라고 말해요&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class=&quot;num&quot;&gt;02&lt;/span&gt;&lt;span&gt;${esc(S.how)}&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p class=&quot;note&quot;&gt;혜택 근거: ${esc(SRC[S.srcKey][2])} (예시) · 리캐치는 카드 결제 바코드를 저장하지 않아요.&lt;/p&gt;
   &lt;div class=&quot;acts&quot;&gt;&lt;button class=&quot;btn btn-brand btn-block&quot; id=&quot;pyOk&quot;&gt;재결제 완료&lt;/button&gt;&lt;button class=&quot;btn btn-soft btn-block&quot; id=&quot;pySkip&quot;&gt;이번엔 넘어갈게요&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;`);
