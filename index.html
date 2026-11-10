@@ -1159,7 +1159,7 @@ html.theming,html.theming *{transition:background-color .35s ease,color .35s eas
               &lt;button class=&quot;ibtn&quot; data-open=&quot;settings&quot; aria-label=&quot;설정&quot;&gt;&lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M4 7h10M18 7h2M4 17h4M12 17h8&quot;/&gt;&lt;circle cx=&quot;16&quot; cy=&quot;7&quot; r=&quot;2&quot;/&gt;&lt;circle cx=&quot;10&quot; cy=&quot;17&quot; r=&quot;2&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;
             &lt;/div&gt;
             &lt;span class=&quot;hi&quot; id=&quot;hiName&quot;&gt;안녕하세요, 김리캐 님&lt;/span&gt;
-            &lt;button class=&quot;paycard&quot; data-open=&quot;stmt&quot; aria-label=&quot;11월 정산 카드, 누르면 정산 리포트&quot;&gt;
+            &lt;div class=&quot;pcrail-wrap&quot;&gt;&lt;div class=&quot;pcrail&quot; id=&quot;pcRail&quot; aria-label=&quot;정산 카드와 등록된 카드, 옆으로 넘겨 보기&quot;&gt;&lt;button class=&quot;paycard pcs&quot; data-open=&quot;stmt&quot; aria-label=&quot;11월 정산 카드, 누르면 정산 리포트&quot;&gt;
               &lt;span class=&quot;pc-top&quot;&gt;&lt;span class=&quot;logo&quot;&gt;ReCatch&lt;b class=&quot;tap&quot;&gt;Tap&lt;/b&gt;&lt;span class=&quot;dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;pc-tag&quot;&gt;11월 정산 &lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M8.5 7.5a6 6 0 0 1 0 9M12 5a9.5 9.5 0 0 1 0 14M15.5 2.5a13 13 0 0 1 0 19&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
               &lt;span class=&quot;pc-mid&quot;&gt;&lt;small&gt;11월에 되찾은 돈&lt;/small&gt;&lt;span class=&quot;pc-amt&quot;&gt;&lt;span id=&quot;hTotal&quot;&gt;0&lt;/span&gt;&lt;small&gt;원&lt;/small&gt;&lt;/span&gt;&lt;span class=&quot;pc-sub&quot; id=&quot;hSub&quot;&gt;&lt;/span&gt;&lt;/span&gt;
               &lt;span class=&quot;pc-bot&quot;&gt;
@@ -1167,7 +1167,7 @@ html.theming,html.theming *{transition:background-color .35s ease,color .35s eas
                 &lt;span class=&quot;net&quot;&gt;&lt;small&gt;내 순절약&lt;/small&gt;&lt;b id=&quot;lNet&quot;&gt;0&lt;/b&gt;&lt;/span&gt;
                 &lt;span&gt;&lt;small&gt;확인 중&lt;/small&gt;&lt;b id=&quot;lPend&quot;&gt;0&lt;/b&gt;&lt;/span&gt;
               &lt;/span&gt;
-            &lt;/button&gt;
+            &lt;/button&gt;&lt;span id=&quot;pcCards&quot; style=&quot;display:contents&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;pcdots&quot; id=&quot;pcDots&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;&lt;/div&gt;
             &lt;div class=&quot;qa&quot;&gt;
               &lt;button class=&quot;main&quot; data-flow&gt;&lt;span class=&quot;qi&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;qbadge&quot;&gt;클릭!&lt;/span&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M3 12a9 9 0 1 0 3-6.7L3 8&quot;/&gt;&lt;path d=&quot;M3 3v5h5&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;재결제 체험&lt;/button&gt;
               &lt;button data-open=&quot;stmt&quot;&gt;&lt;span class=&quot;qi&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;정산 리포트&lt;/button&gt;
@@ -1311,7 +1311,7 @@ if(!realPhone){const r=document.documentElement;r.classList.add(&#x27;framed&#x2
 /* ---------- 예시 데이터 (금액은 시연용) ---------- */
 const CAT={shop:[&#x27;온라인쇼핑&#x27;,&#x27;#C2410C&#x27;],mart:[&#x27;마트·생활&#x27;,&#x27;#2F7D5B&#x27;],elec:[&#x27;가전·디지털&#x27;,&#x27;#4B5563&#x27;],cafe:[&#x27;카페&#x27;,&#x27;#0B7A55&#x27;],film:[&#x27;영화·문화&#x27;,&#x27;#C42A31&#x27;],dine:[&#x27;외식&#x27;,&#x27;#F98802&#x27;],cvs:[&#x27;편의점&#x27;,&#x27;#1D6FD8&#x27;],beauty:[&#x27;뷰티&#x27;,&#x27;#A13C8A&#x27;],bake:[&#x27;베이커리&#x27;,&#x27;#8A6A12&#x27;]};
 const SRC={kb:[&#x27;KB국민 톡톡D 체크&#x27;,&#x27;#F6A623&#x27;,&#x27;카드사 상품설명서·여신금융협회 공시&#x27;],sh:[&#x27;신한 Mr.Life 신용&#x27;,&#x27;#1F3FA8&#x27;,&#x27;카드사 상품설명서·여신금융협회 공시&#x27;],skt:[&#x27;SKT T멤버십 VIP&#x27;,&#x27;#E4002B&#x27;,&#x27;통신사 공식 멤버십 혜택 안내&#x27;],cj:[&#x27;CJ ONE 멤버십&#x27;,&#x27;#6E3FA3&#x27;,&#x27;CJ ONE 공식 혜택 안내&#x27;],hd:[&#x27;현대카드 ZERO&#x27;,&#x27;#26282F&#x27;,&#x27;카드사 상품설명서·여신금융협회 공시&#x27;]};
-const MARK={&#x27;쿠팡&#x27;:[&#x27;C&#x27;,&#x27;#F2601D&#x27;],&#x27;마켓컬리&#x27;:[&#x27;K&#x27;,&#x27;#5F0080&#x27;],&#x27;이마트&#x27;:[&#x27;E&#x27;,&#x27;#E5A100&#x27;],&#x27;홈플러스&#x27;:[&#x27;H&#x27;,&#x27;#D7262C&#x27;],&#x27;다이소&#x27;:[&#x27;D&#x27;,&#x27;#C8102E&#x27;],&#x27;롯데하이마트&#x27;:[&#x27;H&#x27;,&#x27;#E5202E&#x27;],&#x27;아웃백&#x27;:[&#x27;O&#x27;,&#x27;#7A2E1B&#x27;],&#x27;투썸&#x27;:[&#x27;T&#x27;,&#x27;#9E1B32&#x27;],&#x27;CU&#x27;:[&#x27;CU&#x27;,&#x27;#6A2C91&#x27;],&#x27;배스킨&#x27;:[&#x27;B&#x27;,&#x27;#D6336C&#x27;],&#x27;롯데시네마&#x27;:[&#x27;L&#x27;,&#x27;#ED1C24&#x27;],&#x27;스타벅스&#x27;:[&#x27;S&#x27;,&#x27;#0B7A55&#x27;],&#x27;빕스&#x27;:[&#x27;V&#x27;,&#x27;#7A1F2B&#x27;],&#x27;CGV&#x27;:[&#x27;C&#x27;,&#x27;#E8332A&#x27;],&#x27;GS25&#x27;:[&#x27;GS&#x27;,&#x27;#1D6FD8&#x27;],&#x27;올리브영&#x27;:[&#x27;O&#x27;,&#x27;#7DB32E&#x27;],&#x27;맘스터치&#x27;:[&#x27;M&#x27;,&#x27;#B5500E&#x27;],&#x27;파리바게뜨&#x27;:[&#x27;P&#x27;,&#x27;#1E3F8F&#x27;]};
+const MARK={&#x27;애슐리&#x27;:[&#x27;A&#x27;,&#x27;#B5121B&#x27;],&#x27;쿠팡&#x27;:[&#x27;C&#x27;,&#x27;#F2601D&#x27;],&#x27;마켓컬리&#x27;:[&#x27;K&#x27;,&#x27;#5F0080&#x27;],&#x27;이마트&#x27;:[&#x27;E&#x27;,&#x27;#E5A100&#x27;],&#x27;홈플러스&#x27;:[&#x27;H&#x27;,&#x27;#D7262C&#x27;],&#x27;다이소&#x27;:[&#x27;D&#x27;,&#x27;#C8102E&#x27;],&#x27;롯데하이마트&#x27;:[&#x27;H&#x27;,&#x27;#E5202E&#x27;],&#x27;아웃백&#x27;:[&#x27;O&#x27;,&#x27;#7A2E1B&#x27;],&#x27;투썸&#x27;:[&#x27;T&#x27;,&#x27;#9E1B32&#x27;],&#x27;CU&#x27;:[&#x27;CU&#x27;,&#x27;#6A2C91&#x27;],&#x27;배스킨&#x27;:[&#x27;B&#x27;,&#x27;#D6336C&#x27;],&#x27;롯데시네마&#x27;:[&#x27;L&#x27;,&#x27;#ED1C24&#x27;],&#x27;스타벅스&#x27;:[&#x27;S&#x27;,&#x27;#0B7A55&#x27;],&#x27;빕스&#x27;:[&#x27;V&#x27;,&#x27;#7A1F2B&#x27;],&#x27;CGV&#x27;:[&#x27;C&#x27;,&#x27;#E8332A&#x27;],&#x27;GS25&#x27;:[&#x27;GS&#x27;,&#x27;#1D6FD8&#x27;],&#x27;올리브영&#x27;:[&#x27;O&#x27;,&#x27;#7DB32E&#x27;],&#x27;맘스터치&#x27;:[&#x27;M&#x27;,&#x27;#B5500E&#x27;],&#x27;파리바게뜨&#x27;:[&#x27;P&#x27;,&#x27;#1E3F8F&#x27;]};
 /* 가맹점별 원본 일러스트 (실제 브랜드 로고 아님) — 실제 매장 사진으로 바꿀 땐 PIC의 값을 이미지로 교체 */
 const PIC={
  &#x27;쿠팡&#x27;:[&#x27;#FFE2CF&#x27;,`&lt;path d=&quot;M11 17 24 11l13 6v15l-13 6-13-6z&quot; fill=&quot;#FFFFFF&quot; stroke=&quot;#9A3412&quot; stroke-width=&quot;2.4&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;path d=&quot;M11 17l13 6 13-6M24 23v15&quot; stroke=&quot;#9A3412&quot; stroke-width=&quot;2.2&quot; stroke-linejoin=&quot;round&quot; fill=&quot;none&quot;/&gt;&lt;path d=&quot;M17.5 14l13 6v5&quot; stroke=&quot;#C2410C&quot; stroke-width=&quot;3&quot; fill=&quot;none&quot;/&gt;`],
@@ -1331,19 +1331,19 @@ const mark=store=&gt;{const lk=Object.keys(LOGO).find(k=&gt;store.startsWith(k)&
   if(k){const [bg,art]=PIC[k],rc=(MARK[k]||[,&#x27;#6B5C4B&#x27;])[1];return `&lt;span class=&quot;mk pic&quot; style=&quot;--m:${bg};--r:${rc}&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg viewBox=&quot;0 0 48 48&quot; width=&quot;34&quot; height=&quot;34&quot;&gt;${art}&lt;/svg&gt;&lt;/span&gt;`}
   const [t,c]=MARK[Object.keys(MARK).find(m=&gt;store.startsWith(m))]||[store[0]||&#x27;?&#x27;,&#x27;#6B5C4B&#x27;];return `&lt;span class=&quot;mk&quot; style=&quot;--m:${c}&quot; aria-hidden=&quot;true&quot;&gt;${esc(t)}&lt;/span&gt;`};
 const BASE_TX=[
- {id:1,store:&#x27;쿠팡&#x27;,cat:&#x27;shop&#x27;,amount:48900,save:2445,src:&#x27;KB 톡톡D 온라인 5%&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;pending&#x27;,d:&#x27;11.08&#x27;,t:&#x27;21:17&#x27;,note:&#x27;주문 취소 후 다시 주문한 건이 확정되면 반영돼요 (D-1)&#x27;},
- {id:2,store:&#x27;CGV 대구현대&#x27;,cat:&#x27;film&#x27;,amount:28000,save:5600,src:&#x27;KB 톡톡D 영화 20%&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:&#x27;11.08&#x27;,t:&#x27;20:10&#x27;},
- {id:3,store:&#x27;이마트 만촌점&#x27;,cat:&#x27;mart&#x27;,amount:186400,save:18640,src:&#x27;신한 Mr.Life 마트 10%&#x27;,srcKey:&#x27;sh&#x27;,status:&#x27;done&#x27;,d:&#x27;11.08&#x27;,t:&#x27;17:20&#x27;},
- {id:4,store:&#x27;스타벅스 범어역점&#x27;,cat:&#x27;cafe&#x27;,amount:13800,save:2760,src:&#x27;KB 톡톡D 20% 캐시백&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:&#x27;11.08&#x27;,t:&#x27;08:42&#x27;},
- {id:5,store:&#x27;GS25 범어오피스점&#x27;,cat:&#x27;cvs&#x27;,amount:15800,save:1580,src:&#x27;신한 Mr.Life 10%&#x27;,srcKey:&#x27;sh&#x27;,status:&#x27;done&#x27;,d:&#x27;11.07&#x27;,t:&#x27;22:41&#x27;},
- {id:6,store:&#x27;아웃백 동성로점&#x27;,cat:&#x27;dine&#x27;,amount:142000,save:21300,src:&#x27;SKT VIP 15% 할인&#x27;,srcKey:&#x27;skt&#x27;,status:&#x27;done&#x27;,d:&#x27;11.07&#x27;,t:&#x27;19:10&#x27;},
- {id:7,store:&#x27;스타벅스 동성로점&#x27;,cat:&#x27;cafe&#x27;,amount:18600,save:3720,src:&#x27;KB 톡톡D 20% 캐시백&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:&#x27;11.07&#x27;,t:&#x27;13:05&#x27;},
- {id:8,store:&#x27;빕스 대구반월당점&#x27;,cat:&#x27;dine&#x27;,amount:89400,save:13410,src:&#x27;SKT VIP 15% 할인&#x27;,srcKey:&#x27;skt&#x27;,status:&#x27;done&#x27;,d:&#x27;11.06&#x27;,t:&#x27;19:44&#x27;},
- {id:9,store:&#x27;마켓컬리&#x27;,cat:&#x27;shop&#x27;,amount:64200,save:3210,src:&#x27;KB 톡톡D 온라인 5%&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:&#x27;11.06&#x27;,t:&#x27;23:02&#x27;},
- {id:10,store:&#x27;배스킨라빈스 범어점&#x27;,cat:&#x27;cafe&#x27;,amount:31000,save:3100,src:&#x27;SKT VIP 10% 할인&#x27;,srcKey:&#x27;skt&#x27;,status:&#x27;done&#x27;,d:&#x27;11.06&#x27;,t:&#x27;15:48&#x27;},
- {id:11,store:&#x27;CU 경북대점&#x27;,cat:&#x27;cvs&#x27;,amount:12300,save:1230,src:&#x27;신한 Mr.Life 10%&#x27;,srcKey:&#x27;sh&#x27;,status:&#x27;done&#x27;,d:&#x27;11.06&#x27;,t:&#x27;11:20&#x27;},
- {id:12,store:&#x27;GS25 동대구역점&#x27;,cat:&#x27;cvs&#x27;,amount:11900,save:1190,src:&#x27;신한 Mr.Life 10%&#x27;,srcKey:&#x27;sh&#x27;,status:&#x27;missed&#x27;,d:&#x27;11.05&#x27;,t:&#x27;18:03&#x27;,note:&#x27;알림을 늦게 확인했어요&#x27;},
- {id:13,store:&#x27;올리브영 동성로점&#x27;,cat:&#x27;beauty&#x27;,amount:42800,save:2140,src:&#x27;CJ ONE 5% 적립&#x27;,srcKey:&#x27;cj&#x27;,status:&#x27;done&#x27;,d:&#x27;11.05&#x27;,t:&#x27;12:30&#x27;},
+ {id:1,store:&#x27;스타벅스 범어역점&#x27;,cat:&#x27;cafe&#x27;,amount:13800,save:2760,src:&#x27;KB 톡톡D 20% 캐시백&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:&#x27;11.08&#x27;,t:&#x27;21:30&#x27;},
+ {id:2,store:&#x27;GS25 범어오피스점&#x27;,cat:&#x27;cvs&#x27;,amount:15800,save:1580,src:&#x27;신한 Mr.Life 10%&#x27;,srcKey:&#x27;sh&#x27;,status:&#x27;done&#x27;,d:&#x27;11.08&#x27;,t:&#x27;20:40&#x27;},
+ {id:3,store:&#x27;빕스 대구반월당점&#x27;,cat:&#x27;dine&#x27;,amount:89400,save:13410,src:&#x27;SKT VIP 15% 할인&#x27;,srcKey:&#x27;skt&#x27;,status:&#x27;done&#x27;,d:&#x27;11.08&#x27;,t:&#x27;19:10&#x27;},
+ {id:4,store:&#x27;올리브영 동성로점&#x27;,cat:&#x27;beauty&#x27;,amount:42800,save:2140,src:&#x27;CJ ONE 5% 적립&#x27;,srcKey:&#x27;cj&#x27;,status:&#x27;done&#x27;,d:&#x27;11.08&#x27;,t:&#x27;15:20&#x27;},
+ {id:5,store:&#x27;쿠팡&#x27;,cat:&#x27;shop&#x27;,amount:48900,save:2445,src:&#x27;KB 톡톡D 온라인 5%&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;pending&#x27;,d:&#x27;11.07&#x27;,t:&#x27;21:17&#x27;,note:&#x27;주문 취소 후 다시 주문한 건이 확정되면 반영돼요 (D-1)&#x27;},
+ {id:6,store:&#x27;CGV 대구현대&#x27;,cat:&#x27;film&#x27;,amount:28000,save:5600,src:&#x27;KB 톡톡D 영화 20%&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:&#x27;11.07&#x27;,t:&#x27;20:10&#x27;},
+ {id:7,store:&#x27;이마트 만촌점&#x27;,cat:&#x27;mart&#x27;,amount:186400,save:18640,src:&#x27;신한 Mr.Life 마트 10%&#x27;,srcKey:&#x27;sh&#x27;,status:&#x27;done&#x27;,d:&#x27;11.07&#x27;,t:&#x27;17:20&#x27;},
+ {id:8,store:&#x27;아웃백 동성로점&#x27;,cat:&#x27;dine&#x27;,amount:142000,save:21300,src:&#x27;SKT VIP 15% 할인&#x27;,srcKey:&#x27;skt&#x27;,status:&#x27;done&#x27;,d:&#x27;11.07&#x27;,t:&#x27;19:10&#x27;},
+ {id:9,store:&#x27;스타벅스 동성로점&#x27;,cat:&#x27;cafe&#x27;,amount:18600,save:3720,src:&#x27;KB 톡톡D 20% 캐시백&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:&#x27;11.07&#x27;,t:&#x27;13:05&#x27;},
+ {id:10,store:&#x27;마켓컬리&#x27;,cat:&#x27;shop&#x27;,amount:64200,save:3210,src:&#x27;KB 톡톡D 온라인 5%&#x27;,srcKey:&#x27;kb&#x27;,status:&#x27;done&#x27;,d:&#x27;11.06&#x27;,t:&#x27;23:02&#x27;},
+ {id:11,store:&#x27;배스킨라빈스 범어점&#x27;,cat:&#x27;cafe&#x27;,amount:31000,save:3100,src:&#x27;SKT VIP 10% 할인&#x27;,srcKey:&#x27;skt&#x27;,status:&#x27;done&#x27;,d:&#x27;11.06&#x27;,t:&#x27;15:48&#x27;},
+ {id:12,store:&#x27;CU 경북대점&#x27;,cat:&#x27;cvs&#x27;,amount:12300,save:1230,src:&#x27;신한 Mr.Life 10%&#x27;,srcKey:&#x27;sh&#x27;,status:&#x27;done&#x27;,d:&#x27;11.06&#x27;,t:&#x27;11:20&#x27;},
+ {id:13,store:&#x27;GS25 동대구역점&#x27;,cat:&#x27;cvs&#x27;,amount:11900,save:1190,src:&#x27;신한 Mr.Life 10%&#x27;,srcKey:&#x27;sh&#x27;,status:&#x27;missed&#x27;,d:&#x27;11.05&#x27;,t:&#x27;18:03&#x27;,note:&#x27;알림을 늦게 확인했어요&#x27;},
  {id:14,store:&#x27;파리바게뜨 수성범어점&#x27;,cat:&#x27;bake&#x27;,amount:27800,save:2780,src:&#x27;SKT VIP 10% 할인&#x27;,srcKey:&#x27;skt&#x27;,status:&#x27;done&#x27;,d:&#x27;11.05&#x27;,t:&#x27;09:15&#x27;},
  {id:15,store:&#x27;다이소 동성로점&#x27;,cat:&#x27;mart&#x27;,amount:23000,save:2300,src:&#x27;신한 Mr.Life 10%&#x27;,srcKey:&#x27;sh&#x27;,status:&#x27;done&#x27;,d:&#x27;11.05&#x27;,t:&#x27;16:40&#x27;},
  {id:16,store:&#x27;롯데하이마트 수성점&#x27;,cat:&#x27;elec&#x27;,amount:1190000,save:35700,src:&#x27;현대카드 가전 3% 청구할인&#x27;,srcKey:&#x27;hd&#x27;,status:&#x27;done&#x27;,d:&#x27;11.04&#x27;,t:&#x27;15:30&#x27;},
@@ -1361,7 +1361,11 @@ const BASE_TX=[
 ];
 const PREV_DEMO=[{m:&#x27;6월&#x27;,v:128400},{m:&#x27;7월&#x27;,v:141200},{m:&#x27;8월&#x27;,v:152900},{m:&#x27;9월&#x27;,v:163500},{m:&#x27;10월&#x27;,v:171300}];let PREV=PREV_DEMO;
 const SCEN=[
- {store:&#x27;빕스 동대구역점&#x27;,short:&#x27;빕스동대구&#x27;,cat:&#x27;dine&#x27;,amount:140000,save:28000,src:&#x27;SKT VIP 20% 할인&#x27;,srcKey:&#x27;skt&#x27;,card:&#x27;현대카드(5530)&#x27;,payCard:&#x27;hd&#x27;,mem:0,how:&#x27;T멤버십 바코드를 먼저 보여준 뒤 현대카드로 다시 결제해요&#x27;}
+ {store:&#x27;빕스 동대구역점&#x27;,short:&#x27;빕스동대구&#x27;,cat:&#x27;dine&#x27;,rate:.2,src:&#x27;SKT VIP 20% 할인&#x27;,srcKey:&#x27;skt&#x27;,card:&#x27;현대카드(5530)&#x27;,payCard:&#x27;hd&#x27;,pass:[&#x27;SKT T멤버십&#x27;,&#x27;VIP&#x27;,&#x27;#E4002B&#x27;,&#x27;7700 1923 8832 1049&#x27;]},
+ {store:&#x27;애슐리퀸즈 동성로점&#x27;,short:&#x27;애슐리동성로&#x27;,cat:&#x27;dine&#x27;,rate:.15,src:&#x27;SKT VIP 15% 할인&#x27;,srcKey:&#x27;skt&#x27;,card:&#x27;현대카드(5530)&#x27;,payCard:&#x27;hd&#x27;,pass:[&#x27;SKT T멤버십&#x27;,&#x27;VIP&#x27;,&#x27;#E4002B&#x27;,&#x27;7700 1923 8832 1049&#x27;]},
+ {store:&#x27;아웃백 동성로점&#x27;,short:&#x27;아웃백동성로&#x27;,cat:&#x27;dine&#x27;,rate:.15,src:&#x27;SKT VIP 15% 할인&#x27;,srcKey:&#x27;skt&#x27;,card:&#x27;현대카드(5530)&#x27;,payCard:&#x27;hd&#x27;,pass:[&#x27;SKT T멤버십&#x27;,&#x27;VIP&#x27;,&#x27;#E4002B&#x27;,&#x27;7700 1923 8832 1049&#x27;]},
+ {store:&#x27;파리바게뜨 수성범어점&#x27;,short:&#x27;파리바게뜨범어&#x27;,cat:&#x27;bake&#x27;,rate:.2,src:&#x27;SKT VIP 20% 할인&#x27;,srcKey:&#x27;skt&#x27;,card:&#x27;현대카드(5530)&#x27;,payCard:&#x27;hd&#x27;,pass:[&#x27;SKT T멤버십&#x27;,&#x27;VIP&#x27;,&#x27;#E4002B&#x27;,&#x27;7700 1923 8832 1049&#x27;]},
+ {store:&#x27;CGV 대구현대&#x27;,short:&#x27;CGV대구현대&#x27;,cat:&#x27;film&#x27;,rate:.2,src:&#x27;SKT VIP 20% 할인&#x27;,srcKey:&#x27;skt&#x27;,card:&#x27;현대카드(5530)&#x27;,payCard:&#x27;hd&#x27;,pass:[&#x27;SKT T멤버십&#x27;,&#x27;VIP&#x27;,&#x27;#E4002B&#x27;,&#x27;7700 1923 8832 1049&#x27;]}
 ];
 /* 카드사와 결제 앱 (앱 이름은 출시 전 카드사 확인 필요) */
 const CO={kb:[&#x27;KB국민카드&#x27;,&#x27;KB Pay&#x27;,&#x27;#F6A623&#x27;,&#x27;#2A1606&#x27;],sh:[&#x27;신한카드&#x27;,&#x27;신한 SOL페이&#x27;,&#x27;#1F3FA8&#x27;,&#x27;#FFFFFF&#x27;],hd:[&#x27;현대카드&#x27;,&#x27;현대카드 앱&#x27;,&#x27;#26282F&#x27;,&#x27;#FFFFFF&#x27;],ss:[&#x27;삼성카드&#x27;,&#x27;삼성카드 앱&#x27;,&#x27;#1428A0&#x27;,&#x27;#FFFFFF&#x27;],lt:[&#x27;롯데카드&#x27;,&#x27;디지로카&#x27;,&#x27;#C8102E&#x27;,&#x27;#FFFFFF&#x27;],hn:[&#x27;하나카드&#x27;,&#x27;하나Pay&#x27;,&#x27;#00857C&#x27;,&#x27;#FFFFFF&#x27;],wr:[&#x27;우리카드&#x27;,&#x27;우리WON카드&#x27;,&#x27;#0067AC&#x27;,&#x27;#FFFFFF&#x27;],nh:[&#x27;NH농협카드&#x27;,&#x27;NH pay&#x27;,&#x27;#00843D&#x27;,&#x27;#FFFFFF&#x27;]};
@@ -1386,7 +1390,7 @@ const SWITCHES=[[&#x27;detect&#x27;,&#x27;결제 알림 실시간 감지&#x27;,&
 const FORMATS={numeric:[&#x27;숫자형 바코드 (8~24자리)&#x27;,8,24],member16:[&#x27;16자리 멤버십·선불카드&#x27;,16,16],ean13:[&#x27;EAN-13 (13자리·검증 숫자 포함)&#x27;,13,13,true],upca:[&#x27;UPC-A (12자리·검증 숫자 포함)&#x27;,12,12,true]};
 
 /* ---------- 상태 + 저장 ---------- */
-const KEY=&#x27;rc-orange-v7&#x27;;
+const KEY=&#x27;rc-orange-v9&#x27;;
 let activeKey=KEY,saveFailed=false;
 const readSaved=k=&gt;{try{const v=JSON.parse(localStorage.getItem(k)||&#x27;null&#x27;);return v&amp;&amp;typeof v===&#x27;object&#x27;&amp;&amp;!Array.isArray(v)?v:null}catch(_){return null}};
 const okName=n=&gt;typeof n===&#x27;string&#x27;&amp;&amp;n.trim().length&gt;0&amp;&amp;n.length&lt;=40;
@@ -1452,6 +1456,20 @@ function toggleSlide(v){const max=v.querySelector(&#x27;.hero&#x27;).offsetHeigh
 
 /* 아이패드(터치 + 넓은 화면): 화면 전체로 넓혀요 */
 (function(){const tab=()=&gt;document.documentElement.classList.toggle(&#x27;tab&#x27;,matchMedia(&#x27;(pointer:coarse)&#x27;).matches&amp;&amp;Math.min(screen.width,screen.height)&gt;=600);tab();addEventListener(&#x27;resize&#x27;,tab)})();
+
+/* 홈 정산 카드 옆으로 넘기면 등록된 카드가 하나씩 나와요 */
+function renderHomeCards(){const box=$(&#x27;#pcCards&#x27;),rail=$(&#x27;#pcRail&#x27;),dots=$(&#x27;#pcDots&#x27;);if(!box||!rail)return;
+  box.innerHTML=CARDS.map((c,i)=&gt;{const pct=c.need?Math.min(100,Math.round(c.now/c.need*100)):100;
+   return `&lt;button class=&quot;pcs hcard&quot; style=&quot;--art:${c.art};--on:${c.on}&quot; data-hcard=&quot;${i}&quot; aria-label=&quot;${esc(c.bank+&#x27; &#x27;+c.name)}, 누르면 지갑에서 보기&quot;&gt;&lt;span class=&quot;ring&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;hc-top&quot;&gt;&lt;span&gt;&lt;span class=&quot;bank&quot;&gt;${esc(c.bank)}&lt;/span&gt;&lt;span class=&quot;cname&quot;&gt;${esc(c.name)}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;chipi&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;hc-perk&quot;&gt;&lt;small&gt;주요 혜택&lt;/small&gt;&lt;b&gt;${esc(c.perk||&#x27;&#x27;)}&lt;/b&gt;&lt;/span&gt;
+    &lt;span class=&quot;hc-bot&quot;&gt;&lt;span class=&quot;cno&quot;&gt;•••• ${esc(c.last)}&lt;/span&gt;&lt;span class=&quot;hc-need&quot;&gt;${c.need?`실적 ${pct}%`:&#x27;실적 조건 없음&#x27;}&lt;/span&gt;&lt;/span&gt;
+    ${c.need?`&lt;span class=&quot;hc-bar&quot; aria-hidden=&quot;true&quot;&gt;&lt;i style=&quot;width:${pct}%&quot;&gt;&lt;/i&gt;&lt;/span&gt;`:&#x27;&#x27;}&lt;/button&gt;`}).join(&#x27;&#x27;);
+  const n=CARDS.length+1;dots.innerHTML=Array.from({length:n},(_,i)=&gt;`&lt;i${i===0?&#x27; class=&quot;on&quot;&#x27;:&#x27;&#x27;}&gt;&lt;/i&gt;`).join(&#x27;&#x27;);
+  if(!rail.dataset.bound){rail.dataset.bound=&#x27;1&#x27;;
+   let t;rail.addEventListener(&#x27;scroll&#x27;,()=&gt;{cancelAnimationFrame(t);t=requestAnimationFrame(()=&gt;{const i=Math.round(rail.scrollLeft/(rail.clientWidth||1));$$(&#x27;#pcDots i&#x27;).forEach((d,k)=&gt;d.classList.toggle(&#x27;on&#x27;,k===i))})},{passive:true});
+   rail.addEventListener(&#x27;click&#x27;,e=&gt;{const b=e.target.closest(&#x27;[data-hcard]&#x27;);if(!b)return;e.preventDefault();e.stopPropagation();cur=+b.dataset.hcard;go(&#x27;wallet&#x27;)},true);}
+}
 /* 재결제 체험 버튼: 한 번 누르면 깜박임 멈춤 */
 $$(&#x27;.qa .main&#x27;).forEach(b=&gt;b.addEventListener(&#x27;click&#x27;,()=&gt;b.classList.add(&#x27;seen&#x27;)));
 /* 시트가 내려가 있을 때: 보이는 시트 어디를 눌러도 위로 올라와요 (항목이 바로 열리지 않게 첫 탭은 올리기만) */
@@ -1460,7 +1478,7 @@ $$(&#x27;.view&#x27;).forEach(v=&gt;{const pn=v.querySelector(&#x27;.panel&#x27;
     e.preventDefault();e.stopPropagation();v.scrollTo({top:max,behavior:reduce?&#x27;auto&#x27;:&#x27;smooth&#x27;})},true)});
 
 /* ---------- 홈 ---------- */
-function renderHome(flashId){
+function renderHome(flashId){try{renderHomeCards()}catch(_){}
   const T=totals(),last=PREV[PREV.length-1].v;
   const db=$(&#x27;#demoBtn&#x27;);if(db){db.dataset.armed=&#x27;&#x27;;db.classList.toggle(&#x27;apply&#x27;,!demoData);db.textContent=demoData?&#x27;시연 중 · 비우기&#x27;:&#x27;시연 데이터 적용&#x27;;db.setAttribute(&#x27;aria-label&#x27;,demoData?&#x27;시연 데이터를 비우고 0원으로 시작하기&#x27;:&#x27;예시 결제 내역으로 채우기&#x27;)}
   countTo($(&#x27;#hTotal&#x27;),T.rec);
@@ -1772,7 +1790,7 @@ function nowParts(){const d=new Date(),p=n=&gt;String(n).padStart(2,&#x27;0&#x27
 function showPanel(el){$$(&#x27;#flow .panel-f&#x27;).forEach(p=&gt;p.inert=p!==el);el.tabIndex=-1;el.focus({preventScroll:true})}
 const X=`&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.4&quot; stroke-linecap=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M6 6l12 12M18 6 6 18&quot;/&gt;&lt;/svg&gt;`;
 function startFlow(){if(flow.classList.contains(&#x27;on&#x27;))return;closeSheet();flowFocus=document.activeElement;recorded=false;
-  const S=SCEN[scenIdx%SCEN.length],N=nowParts();scenIdx++;persist();
+  const pick=(()=&gt;{let i=Math.floor(Math.random()*SCEN.length);if(SCEN.length&gt;1&amp;&amp;i===window.__lastScen)i=(i+1)%SCEN.length;window.__lastScen=i;return SCEN[i]})(),svAmt=Math.round((10000+Math.random()*20000)/100)*100,payAmt=Math.round(svAmt/pick.rate/1000)*1000,S=Object.assign({},pick,{amount:payAmt,save:Math.round(payAmt*pick.rate)}),N=nowParts();scenIdx++;persist();
   $(&#x27;#mainUi&#x27;).inert=true;flow.setAttribute(&#x27;aria-hidden&#x27;,&#x27;false&#x27;);flow.classList.add(&#x27;on&#x27;);
   const D=new Date(),WD=[&#x27;일&#x27;,&#x27;월&#x27;,&#x27;화&#x27;,&#x27;수&#x27;,&#x27;목&#x27;,&#x27;금&#x27;,&#x27;토&#x27;][D.getDay()]+&#x27;요일&#x27;,DN=D.getDate();
   const sv=(d,w=30,sw=2)=&gt;`&lt;svg width=&quot;${w}&quot; height=&quot;${w}&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;${sw}&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;${d}&lt;/svg&gt;`;
@@ -1840,13 +1858,14 @@ function buzz(){try{navigator.vibrate&amp;&amp;navigator.vibrate(40)}catch(_){}}
 function recordMissed(S,N){if(recorded)return;recorded=true;TX.unshift({id:nextId++,store:S.store,cat:S.cat,amount:S.amount,save:S.save,src:S.src,srcKey:S.srcKey,status:&#x27;missed&#x27;,d:N.d,t:N.t,note:&#x27;재결제를 건너뛰었어요&#x27;});persist();endFlow();RENDER[tab]();toast(&#x27;놓친 혜택으로 기록했어요. 수수료는 없어요.&#x27;+saveNote())}
 function pay(S,N){if($(&#x27;#payP&#x27;))return;
   const c=CARDS.find(x=&gt;x.id===S.payCard)||BASE_CARDS.find(x=&gt;x.id===S.payCard)||CARDS[0]||BASE_CARDS[0],ci=CARDS.indexOf(c);
-  const MM=(S.mem!==undefined?(MEMS[S.mem]||BASE_MEMS[S.mem]):null)||BASE_MEMS[0];
+  const MM=S.pass?{name:S.pass[0],tier:S.pass[1],m:[&#x27;&#x27;,S.pass[2]],code:S.pass[3]}:((S.mem!==undefined?(MEMS[S.mem]||BASE_MEMS[S.mem]):null)||BASE_MEMS[0]);
   flow.insertAdjacentHTML(&#x27;beforeend&#x27;,`&lt;div class=&quot;panel-f pay p1&quot; id=&quot;payP&quot;&gt;
   &lt;div class=&quot;p1-top&quot;&gt;${mark(S.store)}&lt;div&gt;&lt;b&gt;${esc(S.store)}&lt;/b&gt;&lt;small&gt;${N.hm} 결제 · ${won(S.amount)}원&lt;/small&gt;&lt;/div&gt;&lt;button class=&quot;p1-x&quot; data-end aria-label=&quot;닫기&quot;&gt;${X}&lt;/button&gt;&lt;/div&gt;
   &lt;div class=&quot;p1-bar&quot; aria-hidden=&quot;true&quot;&gt;&lt;i id=&quot;tBar&quot;&gt;&lt;/i&gt;&lt;/div&gt;
   &lt;div class=&quot;p1-big&quot;&gt;&lt;span class=&quot;p1-badge&quot;&gt;${esc(S.src)} · &lt;span id=&quot;tTxt&quot;&gt;2:00&lt;/span&gt; 남음&lt;/span&gt;&lt;div class=&quot;p1-save&quot;&gt;&lt;span class=&quot;num&quot;&gt;${won(S.save)}&lt;/span&gt;원&lt;/div&gt;&lt;p&gt;지금 다시 결제하면 아껴요&lt;/p&gt;&lt;/div&gt;
   &lt;div class=&quot;p1-say&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;💬&lt;/span&gt;&lt;span&gt;직원에게 &lt;b&gt;&quot;방금 결제 취소하고 다시 할게요&quot;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;p1-pass&quot; style=&quot;--pc:${MM.m[1]}&quot;&gt;&lt;div class=&quot;p1-ph&quot;&gt;&lt;div&gt;&lt;b&gt;${esc(MM.name)}&lt;/b&gt;&lt;small&gt;먼저 이 바코드를 보여주세요&lt;/small&gt;&lt;/div&gt;&lt;span&gt;${esc(MM.tier)}&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;p1-bc&quot;&gt;${barcode(MM.code,86)}&lt;div class=&quot;num&quot;&gt;${esc(MM.code)}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+  ${S.extra?`&lt;button class=&quot;p1-extra&quot; id=&quot;pyExtra&quot;&gt;&lt;span class=&quot;ex-ic&quot; aria-hidden=&quot;true&quot;&gt;＋&lt;/span&gt;&lt;span class=&quot;ex-tx&quot;&gt;&lt;b&gt;${esc(S.extra.app)} 앱 자동 연결 ↗&lt;/b&gt;&lt;small&gt;${esc(S.extra.what)} 혜택도 추가로 받아가세요&lt;/small&gt;&lt;/span&gt;&lt;/button&gt;`:&#x27;&#x27;}
   ${ci&gt;=0?`&lt;button class=&quot;btn btn-block p1-app&quot; data-card=&quot;${ci}&quot;&gt;${esc(appOf(c))} 열어 다시 결제 ↗&lt;/button&gt;`:&#x27;&#x27;}
   &lt;div class=&quot;p1-acts&quot;&gt;&lt;button class=&quot;btn btn-block p1-ok&quot; id=&quot;pyOk&quot;&gt;재결제 완료&lt;/button&gt;&lt;button class=&quot;btn btn-block p1-skip&quot; id=&quot;pySkip&quot;&gt;이번엔 넘어갈게요&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;`);
   showPanel($(&#x27;#payP&#x27;));const deadline=Date.now()+120000;
@@ -1854,6 +1873,7 @@ function pay(S,N){if($(&#x27;#payP&#x27;))return;
     if(left===0){clearInterval(tick);const ok=$(&#x27;#pyOk&#x27;);ok.disabled=true;ok.textContent=&#x27;재결제 시간이 지났어요&#x27;;$(&#x27;#pySkip&#x27;).textContent=&#x27;놓친 혜택으로 기록하고 닫기&#x27;}};
   tick=setInterval(upd,250);upd();
   $(&#x27;#pySkip&#x27;).onclick=()=&gt;recordMissed(S,N);
+  const ex=$(&#x27;#pyExtra&#x27;);if(ex)ex.onclick=()=&gt;{ex.classList.add(&#x27;done&#x27;);ex.querySelector(&#x27;b&#x27;).textContent=S.extra.app+&#x27; 연결됨 ✓&#x27;;toast(`시연 화면이에요 · 실제로는 ${S.extra.app} 앱을 바로 열어 적립해요`)};
   $(&#x27;#pyOk&#x27;).onclick=()=&gt;{if(recorded||Date.now()&gt;=deadline)return;recorded=true;clearInterval(tick);success(S,N)};
 }
 function success(S,N){const id=nextId++;
@@ -2084,6 +2104,58 @@ input,select{font-size:16px!important}
 .ios2 .ios-dock{padding:16px 12px;border-radius:34px;background:rgba(255,255,255,.3)}
 .ios-end{position:absolute;right:12px;bottom:calc(150px + max(env(safe-area-inset-bottom,0px),var(--sab,0px)));display:flex;align-items:center;gap:4px;padding:6px 10px 6px 8px;border-radius:16px;background:rgba(0,0,0,.28);color:#FFFFFF;font-size:12px;font-weight:600;z-index:4;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .ios-end svg{width:12px;height:12px}
+.paycard,.hcard,html[data-theme=&quot;dark&quot;] .paycard{box-shadow:none!important}
+.paycard .v-shadow{display:none!important}
+/* 가게 아이콘 또렷하게: 바깥 흐린 링 제거, 단색 원 + 선명한 그림 */
+.mk,.mk.pic,html[data-theme=&quot;dark&quot;] .mk{box-shadow:none!important;border:0!important}
+.mk.pic{background:var(--m)!important}
+.mk.pic svg{width:30px;height:30px;shape-rendering:geometricPrecision}
+.mk:not(.pic){background:color-mix(in srgb,var(--m) 14%,#FFFFFF)!important;color:var(--m)!important;font-weight:900}
+/* 시트를 올렸을 때 &#x27;최근 리캐치&#x27; 제목이 위 손잡이에 가려지지 않게 */
+.view .handle{margin-bottom:14px}
+.paycard .pc-mid&gt;small{font-size:15.5px!important;font-weight:800!important;color:#FFFFFF!important;letter-spacing:-.01em}
+html[data-theme=&quot;dark&quot;] .paycard .pc-mid&gt;small{color:#1E150B!important}
+.qa button{color:#1E150B}
+.qa .main{color:#1E150B!important}
+
+/* 추가 적립 앱 연결 */
+.p1-extra{display:flex;align-items:center;gap:11px;width:100%;text-align:left;padding:11px 14px;border-radius:16px;background:#FFF1DF;border:1.5px dashed #F5B26B;color:#1E150B;flex:none}
+.p1-extra .ex-ic{width:32px;height:32px;border-radius:50%;background:#E86A00;color:#FFFFFF;display:grid;place-items:center;font-weight:900;font-size:17px;flex:none}
+.p1-extra .ex-tx{display:flex;flex-direction:column;min-width:0}
+.p1-extra b{font-size:14.5px;font-weight:800;color:#B34700}
+.p1-extra small{font-size:12.5px;color:#4F4234}
+.p1-extra.done{border-style:solid;background:#EAF7EF;border-color:#9AD7B0}.p1-extra.done .ex-ic{background:#1F9D55}.p1-extra.done b{color:#16753E}
+@media (max-height:740px){.p1-extra{padding:8px 12px}.p1-extra .ex-ic{width:26px;height:26px}.p1-extra b{font-size:13.5px}.p1-extra small{font-size:11.5px}}
+@media (max-height:700px){.flow .pay.p1 .p1-say{display:none}}
+
+
+/* 홈 카드 레일 */
+.pcrail-wrap{position:relative}
+.pcrail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 calc(-1*var(--gut)) 0 calc(-1*var(--gut));padding:0 var(--gut) 14px;scroll-padding:0 var(--gut);overscroll-behavior-x:contain}
+.pcrail::-webkit-scrollbar{display:none}
+.pcrail .pcs{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always}
+.hcard{position:relative;aspect-ratio:1.586;border-radius:24px;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;overflow:hidden;color:var(--on,#FFFFFF);background:var(--art);box-shadow:0 14px 28px rgba(120,60,0,.22)}
+.hcard .ring{position:absolute;right:-60px;top:-60px;width:210px;height:210px;border-radius:50%;border:28px solid rgba(255,255,255,.14)}
+.hcard&gt;*:not(.ring){position:relative}
+.hc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.hc-top .bank{display:block;font-size:12.5px;font-weight:700;opacity:.9}
+.hc-top .cname{display:block;font-size:21px;font-weight:900;letter-spacing:-.02em;line-height:1.25}
+.hcard .chipi{width:38px;height:28px;border-radius:6px;background:#E8C77E;border:1px solid rgba(0,0,0,.18);flex:none}
+.hc-perk small{display:block;font-size:11.5px;opacity:.8}
+.hc-perk b{font-size:16px;font-weight:800}
+.hc-bot{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.hc-bot .cno{font-family:var(--f-num);font-size:14px;letter-spacing:.1em}
+.hc-need{font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:99px;background:rgba(255,255,255,.22)}
+.hc-bar{position:absolute!important;left:20px;right:20px;bottom:10px;height:4px;border-radius:4px;background:rgba(255,255,255,.25);overflow:hidden}
+.hc-bar i{display:block;height:100%;background:currentColor;border-radius:4px}
+.pcdots{display:flex;justify-content:center;gap:5px;margin:-4px 0 2px}
+.pcdots i{width:6px;height:6px;border-radius:6px;background:rgba(30,21,11,.25);transition:width .25s,background .25s}
+.pcdots i.on{width:18px;background:#1E150B}
+html.tab .hcard{aspect-ratio:2.4/1!important;max-height:300px}
+/* 홈 배경: 10번 투톤 (위 크림 · 아래 주황) */
+html:not([data-theme=&quot;dark&quot;]) .hero{background:url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2760%27%20height%3D%2756%27%20viewBox%3D%270%200%2060%2056%27%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2728%27%20r%3D%2713%27%20fill%3D%27none%27%20stroke%3D%27%23E86A00%27%20stroke-opacity%3D%27.13%27%20stroke-width%3D%272.6%27/%3E%3Ctext%20x%3D%2730%27%20y%3D%2733%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%27%20font-weight%3D%27700%27%20fill%3D%27%23E86A00%27%20fill-opacity%3D%27.16%27%3E%E2%82%A9%3C/text%3E%3C/svg%3E&quot;) 0 0/60px 56px repeat,#FFE2BF}
+html:not([data-theme=&quot;dark&quot;]) .view[data-view=&quot;home&quot;]{background:linear-gradient(to bottom,#FFE2BF 0 50%,var(--card) 50%)}
+
 /* 아이패드 전체 화면 */
 html.tab body{flex:1 1 auto;width:100%;min-width:0}html.tab .paycard{aspect-ratio:2.4/1!important;max-height:300px}html.tab .app{max-width:none}
 @media (min-aspect-ratio:1/1){html.tab .app{max-width:760px!important;margin:0 auto!important}html.tab body{background:var(--hero-a)}}
