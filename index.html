@@ -29,11 +29,13 @@ html,body{margin:0;height:100%;overflow:hidden;overscroll-behavior:none;backgrou
 @media (min-width:600px){#iosSb{display:block}.box iframe{background:#111014!important;border-radius:55px;clip-path:inset(0 round 55px)}}
 /* iOS 26 사파리: fixed 요소가 하단 툴바 영역에 안 그려지는 문제 → 터치 기기는 absolute로 */
 @media (pointer:coarse){html,body{height:100lvh;min-height:100%;overflow:hidden;overscroll-behavior:none}.box{position:absolute!important}}
+@media (pointer:coarse){html,body{background:#18171C}}
+#edgeTint{position:fixed;left:0;right:0;top:0;height:max(2px,env(safe-area-inset-top,0px));background:#18171C;z-index:50;pointer-events:none}@media (min-width:600px) and (pointer:fine){#edgeTint{display:none}}
 #fApp2{opacity:0;visibility:hidden;transform:scale(.96);transition:opacity .28s ease,transform .32s cubic-bezier(.2,.8,.2,1),visibility 0s .32s}
 #fApp2.on{opacity:1;visibility:visible;transform:none;transition:opacity .28s ease,transform .32s cubic-bezier(.2,.8,.2,1)}
 @media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}}
 </style></head><body>
-<div id="probe" aria-hidden="true"></div>
+<div id="probe" aria-hidden="true"></div><div id="edgeTint" aria-hidden="true"></div>
 <main class="box"><div id="iosSb" aria-hidden="true"><span class="t" id="iosTime">9:41</span><span class="notch"></span><span class="r"><svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg width="16" height="12" viewBox="0 0 16 11" fill="currentColor"><path d="M8 2.2c2.3 0 4.4.9 6 2.4l1.2-1.3A10.4 10.4 0 0 0 8 .4 10.4 10.4 0 0 0 .8 3.3L2 4.6a8.6 8.6 0 0 1 6-2.4zm0 3.5c1.4 0 2.6.5 3.6 1.4l1.2-1.3A7 7 0 0 0 8 3.9a7 7 0 0 0-4.8 1.9l1.2 1.3c1-.9 2.2-1.4 3.6-1.4zM8 9.2l2.3-2.3a3.3 3.3 0 0 0-4.6 0z"/></svg><span class="bat"><i></i></span></span></div>
 <iframe id="fAuth" title="ReCatchTap 로그인" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
@@ -1171,10 +1173,10 @@ html.theming,html.theming *{transition:background-color .35s ease,color .35s eas
               &lt;/span&gt;
             &lt;/button&gt;&lt;span id=&quot;pcCards&quot; style=&quot;display:contents&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;pcdots&quot; id=&quot;pcDots&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;&lt;/div&gt;
             &lt;div class=&quot;qa&quot;&gt;
-              &lt;button class=&quot;main&quot; data-flow&gt;&lt;span class=&quot;qi&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;qbadge&quot;&gt;클릭!&lt;/span&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M3 12a9 9 0 1 0 3-6.7L3 8&quot;/&gt;&lt;path d=&quot;M3 3v5h5&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;재결제 체험&lt;/button&gt;
-              &lt;button data-open=&quot;stmt&quot;&gt;&lt;span class=&quot;qi&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;정산 리포트&lt;/button&gt;
-              &lt;button data-open=&quot;profile&quot;&gt;&lt;span class=&quot;qi&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;8&quot; r=&quot;4&quot;/&gt;&lt;path d=&quot;M4 21a8 8 0 0 1 16 0&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;내 프로필&lt;/button&gt;
-              &lt;button data-open=&quot;add&quot;&gt;&lt;span class=&quot;qi&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.2&quot; stroke-linecap=&quot;round&quot;&gt;&lt;path d=&quot;M12 5v14M5 12h14&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;지갑 추가&lt;/button&gt;
+              &lt;button class=&quot;main&quot; data-flow&gt;&lt;span class=&quot;qi&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;qbadge&quot;&gt;클릭!&lt;/span&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M3 12a9 9 0 1 0 3-6.7L3 8&quot;/&gt;&lt;path d=&quot;M3 3v5h5&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;재결제 체험&lt;/button&gt;
+              &lt;button data-open=&quot;stmt&quot;&gt;&lt;span class=&quot;qi&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;정산 리포트&lt;/button&gt;
+              &lt;button data-open=&quot;profile&quot;&gt;&lt;span class=&quot;qi&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;8&quot; r=&quot;4&quot;/&gt;&lt;path d=&quot;M4 21a8 8 0 0 1 16 0&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;내 프로필&lt;/button&gt;
+              &lt;button data-open=&quot;add&quot;&gt;&lt;span class=&quot;qi&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg width=&quot;22&quot; height=&quot;22&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot;&gt;&lt;path d=&quot;M12 5v14M5 12h14&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;지갑 추가&lt;/button&gt;
             &lt;/div&gt;
           &lt;/div&gt;
         &lt;/header&gt;
@@ -1864,7 +1866,7 @@ function pay(S,N){if($(&#x27;#payP&#x27;))return;
   flow.insertAdjacentHTML(&#x27;beforeend&#x27;,`&lt;div class=&quot;panel-f pay p1&quot; id=&quot;payP&quot;&gt;
   &lt;div class=&quot;p1-top&quot;&gt;${mark(S.store)}&lt;div&gt;&lt;b&gt;${esc(S.store)}&lt;/b&gt;&lt;small&gt;${N.hm} 결제 · ${won(S.amount)}원&lt;/small&gt;&lt;/div&gt;&lt;button class=&quot;p1-x&quot; data-end aria-label=&quot;닫기&quot;&gt;${X}&lt;/button&gt;&lt;/div&gt;
   &lt;div class=&quot;p1-bar&quot; aria-hidden=&quot;true&quot;&gt;&lt;i id=&quot;tBar&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-  &lt;div class=&quot;p1-big&quot;&gt;&lt;span class=&quot;p1-badge&quot;&gt;${esc(S.src)} · &lt;span id=&quot;tTxt&quot;&gt;2:00&lt;/span&gt; 남음&lt;/span&gt;&lt;div class=&quot;p1-save&quot;&gt;&lt;span class=&quot;num&quot;&gt;${won(S.save)}&lt;/span&gt;원&lt;/div&gt;&lt;p&gt;지금 다시 결제하면 아껴요&lt;/p&gt;&lt;/div&gt;
+  &lt;div class=&quot;p1-big rc&quot;&gt;&lt;span class=&quot;p1-badge&quot;&gt;${esc(S.src)} · &lt;span id=&quot;tTxt&quot;&gt;2:00&lt;/span&gt; 남음&lt;/span&gt;&lt;div class=&quot;rc-rows&quot;&gt;&lt;div&gt;&lt;span&gt;방금 결제&lt;/span&gt;&lt;span&gt;${won(S.amount)}원&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;d&quot;&gt;&lt;span&gt;${esc(S.src)}&lt;/span&gt;&lt;span&gt;−${won(S.save)}원&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;다시 결제할 금액&lt;/span&gt;&lt;span&gt;${won(S.amount-S.save)}원&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;rc-sum&quot;&gt;&lt;span&gt;아끼는 돈&lt;/span&gt;&lt;div class=&quot;p1-save&quot;&gt;&lt;span class=&quot;hl&quot;&gt;&lt;span class=&quot;num&quot;&gt;${won(S.save)}&lt;/span&gt;&lt;span class=&quot;u&quot;&gt;원&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&quot;p1-say&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;💬&lt;/span&gt;&lt;span&gt;직원에게 &lt;b&gt;&quot;방금 결제 취소하고 다시 할게요&quot;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;p1-pass&quot; style=&quot;--pc:${MM.m[1]}&quot;&gt;&lt;div class=&quot;p1-ph&quot;&gt;&lt;div&gt;&lt;b&gt;${esc(MM.name)}&lt;/b&gt;&lt;small&gt;먼저 이 바코드를 보여주세요&lt;/small&gt;&lt;/div&gt;&lt;span&gt;${esc(MM.tier)}&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;p1-bc&quot;&gt;${barcode(MM.code,86)}&lt;div class=&quot;num&quot;&gt;${esc(MM.code)}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
   ${S.extra?`&lt;button class=&quot;p1-extra&quot; id=&quot;pyExtra&quot;&gt;&lt;span class=&quot;ex-ic&quot; aria-hidden=&quot;true&quot;&gt;＋&lt;/span&gt;&lt;span class=&quot;ex-tx&quot;&gt;&lt;b&gt;${esc(S.extra.app)} 앱 자동 연결 ↗&lt;/b&gt;&lt;small&gt;${esc(S.extra.what)} 혜택도 추가로 받아가세요&lt;/small&gt;&lt;/span&gt;&lt;/button&gt;`:&#x27;&#x27;}
@@ -2155,10 +2157,10 @@ html[data-theme=&quot;dark&quot;] .paycard .pc-mid&gt;small{color:#1E150B!import
 .pcdots i.on{width:18px;background:#1E150B}
 html.tab .hcard{aspect-ratio:2.4/1!important;max-height:300px}
 /* 홈 배경: 10번 투톤 (위 크림 · 아래 주황) */
-html:not([data-theme=&quot;dark&quot;]) .hero{background:url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2760%27%20height%3D%2756%27%20viewBox%3D%270%200%2060%2056%27%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2728%27%20r%3D%2713%27%20fill%3D%27none%27%20stroke%3D%27%23F27A00%27%20stroke-opacity%3D%27.32%27%20stroke-width%3D%272.6%27/%3E%3Ctext%20x%3D%2730%27%20y%3D%2733%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%27%20font-weight%3D%27700%27%20fill%3D%27%23F27A00%27%20fill-opacity%3D%27.4%27%3E%E2%82%A9%3C/text%3E%3C/svg%3E&quot;) 0 0/60px 56px repeat,#FFF4E6}
-html:not([data-theme=&quot;dark&quot;]) .view[data-view=&quot;home&quot;]{background:linear-gradient(to bottom,#FFF4E6 0 50%,var(--card) 50%)}
+html:not([data-theme=&quot;dark&quot;]) .hero{background:url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2760%27%20height%3D%2756%27%20viewBox%3D%270%200%2060%2056%27%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2728%27%20r%3D%2713%27%20fill%3D%27none%27%20stroke%3D%27%23E86A00%27%20stroke-opacity%3D%27.13%27%20stroke-width%3D%272.6%27/%3E%3Ctext%20x%3D%2730%27%20y%3D%2733%27%20font-size%3D%2713%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%27%20font-weight%3D%27700%27%20fill%3D%27%23E86A00%27%20fill-opacity%3D%27.16%27%3E%E2%82%A9%3C/text%3E%3C/svg%3E&quot;) 0 0/60px 56px repeat,#FFE2BF}
+html:not([data-theme=&quot;dark&quot;]) .view[data-view=&quot;home&quot;]{background:linear-gradient(to bottom,#FFE2BF 0 50%,var(--card) 50%)}
 
-/* 홈 빠른 버튼: 리캐치 갈색 */
+/* 홈 빠른 버튼: 리캐치 고동색 */
 .qa button .qi,html[data-theme=&quot;dark&quot;] .qa button .qi{background:linear-gradient(140deg,#33230F 0%,#1E150B 70%)!important;color:#FFFFFF!important;box-shadow:0 6px 14px rgba(30,21,11,.25)!important}
 .qa .main .qi,html[data-theme=&quot;dark&quot;] .qa .main .qi{background:linear-gradient(140deg,#33230F 0%,#1E150B 70%)!important;color:#FFC27A!important}
 .qa button{color:#1E150B}
@@ -2167,7 +2169,6 @@ html[data-theme=&quot;dark&quot;] .qa button,html[data-theme=&quot;dark&quot;] .
 html[data-theme=&quot;dark&quot;] .qa button .qi{box-shadow:0 0 0 1px rgba(255,255,255,.14)!important}
 
 
-html:not([data-theme=&quot;dark&quot;]){--hero-a:#FFF4E6!important}
 /* 아이패드 전체 화면 */
 html.tab body{flex:1 1 auto;width:100%;min-width:0}html.tab .paycard{aspect-ratio:2.4/1!important;max-height:300px}html.tab .app{max-width:none}
 @media (min-aspect-ratio:1/1){html.tab .app{max-width:760px!important;margin:0 auto!important}html.tab body{background:var(--hero-a)}}
@@ -2208,6 +2209,11 @@ html.tab .pay.p1{overflow-y:auto}
 .p1-ok:disabled{background:#E8D3BA;color:#6B5C4B}
 .p1-skip{background:#FFFFFF;color:#1E150B;border:1px solid #F1E3D2;min-height:50px}
 .p1 .mk{flex:none}
+/* 할인액: 6번 영수증 계산형 */
+.p1-big.rc{background:#FFFFFF;border:1px solid #F1E3D2;border-radius:20px;padding:12px 16px;text-align:left;flex:none}.rc-rows{display:flex;flex-direction:column;gap:5px;font-size:14px;color:#6B5C4B;margin-top:9px}.rc-rows div{display:flex;justify-content:space-between;gap:10px}.rc-rows .d{color:#E86A00;font-weight:700}.rc-rows div span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}.rc-sum{margin-top:9px;padding:9px 12px;border-radius:14px;background:#FFF6EA;display:flex;justify-content:space-between;align-items:center}.rc-sum&gt;span{font-size:14.5px;font-weight:800;color:#8A5A2B}.p1-big.rc .p1-save{margin:0!important;font-size:36px!important;color:#1E150B!important}
+@media (max-height:740px){.p1-big.rc{padding:9px 14px}.rc-rows{font-size:13px;gap:3px;margin-top:7px}.rc-sum{margin-top:7px;padding:6px 12px}.p1-big.rc .p1-save{font-size:30px!important}}
+/* 할인액: 9번 형광펜 강조 */
+.p1-save{color:#1E150B!important}.p1-save .hl{background:linear-gradient(transparent 58%,#FFD54A 58%,#FFD54A 92%,transparent 92%);padding:0 6px;-webkit-box-decoration-break:clone}.p1-save .u{font-size:.55em;margin-left:2px;letter-spacing:0}.p1-big p b{color:#E86A00;font-weight:700}
 @media (min-height:800px){.p1-bc svg{height:120px!important}}
 @media (max-height:740px){.flow .pay.p1{gap:8px}.p1-save{font-size:38px}.p1-big{padding:2px 0 0}.p1-say{padding:9px 12px;font-size:13px}.p1-bc{padding:8px 14px 6px}.p1-bc svg{height:60px!important}.p1-app,.p1-ok{min-height:46px}.p1-skip{min-height:44px}}
 
@@ -2312,7 +2318,7 @@ const sbEl=document.getElementById('iosSb'),sbT=document.getElementById('iosTime
 function sbTick(){const d=new Date();sbT.textContent=d.getHours()+':'+String(d.getMinutes()).padStart(2,'0')}sbTick();setInterval(sbTick,10000);
 function sbColor(){sbEl.classList.toggle('ink',appOn&&!appLight)}
 deskQ.addEventListener&&deskQ.addEventListener('change',insets);tabQ.addEventListener&&tabQ.addEventListener('change',()=>{insets();scaleBox()});
-const tcm=document.getElementById('themeColor');function setTC(c){if(!c)return;if(tcm)tcm.setAttribute('content',c);if(deskQ.matches){document.documentElement.style.background='';document.body.style.background='';return}document.documentElement.style.background=c;document.body.style.background=c}
+const tcm=document.getElementById('themeColor');function setTC(c){if(!c)return;if(tcm)tcm.setAttribute('content',c);if(deskQ.matches){document.documentElement.style.background='';document.body.style.background='';return}document.documentElement.style.background=c;document.body.style.background=c;const et=document.getElementById('edgeTint');if(et)et.style.background=c}
 const showInApp=on=>{appOn=on;sbColor();setTC(on?(appLight?'#18171C':'#FFE6C8'):'#18171C');fApp2.classList.toggle('on',on);fApp2.setAttribute('aria-hidden',String(!on));fApp2.tabIndex=on?0:-1;fAuth.tabIndex=on?-1:0;if(on)setTimeout(()=>fApp2.focus(),200)};
 fAuth.addEventListener('load',insets);
 fApp2.addEventListener('load',()=>{insets();if(last){fApp2.contentWindow.postMessage(last,'*');showInApp(true)}});
