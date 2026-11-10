@@ -4,15 +4,15 @@
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ReCatchTap"><meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#18171C">
+<meta name="theme-color" content="#18171C" id="themeColor">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="apple-touch-icon" href="Logo.png"><link rel="icon" type="image/png" href="Logo.png">
 <title>ReCatchTap</title>
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;height:100dvh;overflow:hidden;overscroll-behavior:none;background:#18171C;-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;-webkit-touch-callout:none}
+html,body{margin:0;height:100%;overflow:hidden;overscroll-behavior:none;background:#FFFFFF;-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;-webkit-touch-callout:none}
 #probe{position:fixed;visibility:hidden;pointer-events:none;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
-.box{position:fixed;top:0;left:0;right:0;width:100%;height:100%;height:100dvh;max-width:480px;background:#FFFFFF;margin:0 auto;overflow:hidden;background:#FFFFFF}
+.box{position:fixed;top:0;bottom:0;left:0;right:0;width:100%;max-width:480px;background:#FFFFFF;margin:0 auto;overflow:hidden;background:#FFFFFF}
 @media (min-width:600px){body{background:#2A2730}.box{background:#111014!important;overflow:visible!important;top:50%;left:50%;right:auto;bottom:auto;max-width:none;width:393px;height:852px!important;margin:0;transform:translate(-50%,-50%) scale(var(--k,1));transform-origin:50% 50%;border-radius:55px;box-shadow:0 30px 80px rgba(0,0,0,.5)}.box::after{content:"";position:absolute;inset:-13px;border:14px solid #111014;border-radius:68px;box-shadow:0 0 0 1px #3A3740,inset 0 0 0 1px #111014;pointer-events:none;z-index:20}}
 .box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#FFFFFF}
 #iosSb{display:none;position:absolute;left:0;right:0;top:0;height:50px;z-index:10;pointer-events:none;color:#FFFFFF;font-family:"Pretendard",-apple-system,"SF Pro Text",system-ui,sans-serif;transition:color .25s}
@@ -25,6 +25,7 @@ html,body{margin:0;height:100%;height:100dvh;overflow:hidden;overscroll-behavior
 #iosSb .notch{position:absolute;left:50%;top:0;transform:translateX(-50%);width:158px;height:31px;background:#000;border-radius:0 0 20px 20px}
 #iosSb .notch::before{content:"";position:absolute;left:50%;top:9px;transform:translateX(-50%);width:46px;height:5px;border-radius:3px;background:#1C1C1F}
 #iosSb .notch::after{content:"";position:absolute;left:calc(50% + 34px);top:7px;width:9px;height:9px;border-radius:50%;background:#14141A;box-shadow:inset 0 0 0 2px #22222A}
+@media (min-width:600px) and (pointer:coarse){body{background:#FFF4E7!important}.box{border-radius:32px!important;box-shadow:0 24px 70px rgba(120,60,0,.20)!important}.box::after{display:none!important}#iosSb{display:none!important}.box{background:transparent!important}.box iframe{background:#FFFFFF!important;border-radius:32px!important;clip-path:inset(0 round 32px)!important}}
 @media (min-width:600px){#iosSb{display:block}.box iframe{background:#111014!important;border-radius:55px;clip-path:inset(0 round 55px)}}
 #fApp2{opacity:0;visibility:hidden;transform:scale(.96);transition:opacity .28s ease,transform .32s cubic-bezier(.2,.8,.2,1),visibility 0s .32s}
 #fApp2.on{opacity:1;visibility:visible;transform:none;transition:opacity .28s ease,transform .32s cubic-bezier(.2,.8,.2,1)}
@@ -1881,7 +1882,7 @@ sbTime();setInterval(sbTime,15000);
 function sbUpdate(){const sb=$(&#x27;#statusbar&#x27;);if(!sb)return;const flowOn=flow.classList.contains(&#x27;on&#x27;);let c=&#x27;var(--hero-a)&#x27;;
   if(flowOn)c=($(&#x27;#doneP&#x27;)||$(&#x27;#payP&#x27;))?&#x27;var(--card)&#x27;:&#x27;#FFE6C8&#x27;;
   else{const v=$(&#x27;#v-&#x27;+tab);const p=v?Number(v.style.getPropertyValue(&#x27;--p&#x27;))||0:0;c=p&gt;.97?&#x27;var(--card)&#x27;:&#x27;var(--hero-a)&#x27;}
-  sb.style.setProperty(&#x27;--sb&#x27;,c);try{const lockOn=flowOn&amp;&amp;!($(&#x27;#doneP&#x27;)||$(&#x27;#payP&#x27;));window.parent.postMessage({type:&#x27;rc-sb&#x27;,light:lockOn||document.documentElement.dataset.theme===&#x27;dark&#x27;},&#x27;*&#x27;)}catch(_){}sb.style.color=flowOn&amp;&amp;!($(&#x27;#doneP&#x27;)||$(&#x27;#payP&#x27;))?&#x27;#1E150B&#x27;:&#x27;&#x27;;sb.classList.toggle(&#x27;dim&#x27;,!flowOn&amp;&amp;$(&#x27;#sheet&#x27;).classList.contains(&#x27;on&#x27;));$(&#x27;#sbNoti&#x27;).hidden=!prefs.detect}
+  sb.style.setProperty(&#x27;--sb&#x27;,c);try{const lockOn=flowOn&amp;&amp;!($(&#x27;#doneP&#x27;)||$(&#x27;#payP&#x27;));const cs=getComputedStyle(document.documentElement),rv=x=&gt;x.startsWith(&#x27;var(&#x27;)?cs.getPropertyValue(x.slice(4,-1)).trim():x;const bgc=lockOn?&#x27;#3A0612&#x27;:($(&#x27;#payP&#x27;)&amp;&amp;!$(&#x27;#doneP&#x27;))?&#x27;#FFFAF4&#x27;:rv(c);window.parent.postMessage({type:&#x27;rc-sb&#x27;,light:lockOn||document.documentElement.dataset.theme===&#x27;dark&#x27;,bg:bgc},&#x27;*&#x27;)}catch(_){}sb.style.color=flowOn&amp;&amp;!($(&#x27;#doneP&#x27;)||$(&#x27;#payP&#x27;))?&#x27;#1E150B&#x27;:&#x27;&#x27;;sb.classList.toggle(&#x27;dim&#x27;,!flowOn&amp;&amp;$(&#x27;#sheet&#x27;).classList.contains(&#x27;on&#x27;));$(&#x27;#sbNoti&#x27;).hidden=!prefs.detect}
 $$(&#x27;.view&#x27;).forEach(v=&gt;v.addEventListener(&#x27;scroll&#x27;,sbUpdate,{passive:true}));new MutationObserver(sbUpdate).observe(document.documentElement,{attributes:true,attributeFilter:[&#x27;data-theme&#x27;]});setTimeout(sbUpdate,0);
 new MutationObserver(sbUpdate).observe($(&#x27;#sheet&#x27;),{attributes:true,attributeFilter:[&#x27;class&#x27;]});
 new MutationObserver(sbUpdate).observe(flow,{childList:true,attributes:true,attributeFilter:[&#x27;class&#x27;]});
@@ -2210,16 +2211,17 @@ html[data-theme=&quot;dark&quot;] .mk{box-shadow:none}
 'use strict';
 const fAuth=document.getElementById('fAuth'),fApp2=document.getElementById('fApp2'),probe=document.getElementById('probe');
 /* 아이폰 노치·홈 인디케이터 영역을 화면 안쪽에 전달 */
-const deskQ=matchMedia('(min-width:600px)');
+const deskQ=matchMedia('(min-width:600px) and (pointer:fine)'),tabQ=matchMedia('(min-width:600px) and (pointer:coarse)');
 function insets(){const cs=getComputedStyle(probe),desk=deskQ.matches,top=desk?'47px':cs.paddingTop,bot=desk?'20px':cs.paddingBottom;
   [fAuth,fApp2].forEach(f=>{try{const r=f.contentDocument&&f.contentDocument.documentElement;if(r){r.style.setProperty('--sab',bot);r.style.setProperty('--sat',top)}}catch(_){}})}
-const box=document.querySelector('.box');function scaleBox(){const k=Math.min(1,(innerHeight-60)/852,(innerWidth-60)/393);document.documentElement.style.setProperty('--k',k.toFixed(4))}scaleBox();addEventListener('resize',scaleBox);function fit(){const st=navigator.standalone===true||matchMedia('(display-mode: standalone)').matches;if(!st){box.style.height='';return}const land=innerWidth>innerHeight,full=land?Math.min(screen.width,screen.height):Math.max(screen.width,screen.height);box.style.height=Math.max(full,innerHeight)+'px'}fit();addEventListener('resize',()=>{fit();insets()});addEventListener('orientationchange',()=>setTimeout(()=>{fit();insets()},300));addEventListener('pageshow',fit);addEventListener('orientationchange',()=>setTimeout(insets,300));
+const box=document.querySelector('.box');function scaleBox(){const k=tabQ.matches?Math.min((innerHeight-40)/852,(innerWidth-40)/393):Math.min(1,(innerHeight-60)/852,(innerWidth-60)/393);document.documentElement.style.setProperty('--k',k.toFixed(4))}scaleBox();addEventListener('resize',scaleBox);function fit(){const st=navigator.standalone===true||matchMedia('(display-mode: standalone)').matches;if(!st){box.style.height='';return}const land=innerWidth>innerHeight,full=land?Math.min(screen.width,screen.height):Math.max(screen.width,screen.height);box.style.height=Math.max(full,innerHeight)+'px'}fit();addEventListener('resize',()=>{fit();insets()});addEventListener('orientationchange',()=>setTimeout(()=>{fit();insets()},300));addEventListener('pageshow',fit);addEventListener('orientationchange',()=>setTimeout(insets,300));
 let last=null;
 const sbEl=document.getElementById('iosSb'),sbT=document.getElementById('iosTime');let appOn=false,appLight=false;
 function sbTick(){const d=new Date();sbT.textContent=d.getHours()+':'+String(d.getMinutes()).padStart(2,'0')}sbTick();setInterval(sbTick,10000);
 function sbColor(){sbEl.classList.toggle('ink',appOn&&!appLight)}
-deskQ.addEventListener&&deskQ.addEventListener('change',insets);
-const showInApp=on=>{appOn=on;sbColor();fApp2.classList.toggle('on',on);fApp2.setAttribute('aria-hidden',String(!on));fApp2.tabIndex=on?0:-1;fAuth.tabIndex=on?-1:0;if(on)setTimeout(()=>fApp2.focus(),200)};
+deskQ.addEventListener&&deskQ.addEventListener('change',insets);tabQ.addEventListener&&tabQ.addEventListener('change',()=>{insets();scaleBox()});
+const tcm=document.getElementById('themeColor');function setTC(c){if(!c)return;if(tcm)tcm.setAttribute('content',c);if(deskQ.matches){document.documentElement.style.background='';document.body.style.background='';return}document.documentElement.style.background=c;document.body.style.background=c}
+const showInApp=on=>{appOn=on;sbColor();setTC(on?(appLight?'#18171C':'#FFE6C8'):'#18171C');fApp2.classList.toggle('on',on);fApp2.setAttribute('aria-hidden',String(!on));fApp2.tabIndex=on?0:-1;fAuth.tabIndex=on?-1:0;if(on)setTimeout(()=>fApp2.focus(),200)};
 fAuth.addEventListener('load',insets);
 fApp2.addEventListener('load',()=>{insets();if(last){fApp2.contentWindow.postMessage(last,'*');showInApp(true)}});
 insets();
@@ -2230,7 +2232,7 @@ addEventListener('message',e=>{const m=e.data;if(!m||typeof m.type!=='string')re
     if(m.type==='rc-show-app'&&last)showInApp(true);
     if(m.type==='rc-enter')showInApp(true);
   }else if(e.source===fApp2.contentWindow){
-    if(m.type==='rc-sb'){appLight=!!m.light;sbColor()}
+    if(m.type==='rc-sb'){appLight=!!m.light;sbColor();if(appOn)setTC(m.bg||(appLight?'#18171C':'#FFE6C8'))}
     if(m.type==='rc-logout'){last=null;showInApp(false);fAuth.contentWindow.postMessage({type:'rc-logout'},'*')}
     if(m.type==='rc-exit'){showInApp(false);fAuth.contentWindow.postMessage({type:'rc-exit'},'*')}
   }});
